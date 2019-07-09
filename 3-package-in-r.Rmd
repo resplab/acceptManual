@@ -1,0 +1,58 @@
+---
+title: "Acute COPD Exacerbation Prediction Tool (ACCEPT)"
+site: "bookdown::bookdown_site"
+runtime: "shiny"
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+    table_css: FALSE
+    css: ["pretty-styles.css", "cayman.css", "python.css"]
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit : null
+      download: null
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: yes
+        twitter: yes
+        google: no
+        linkedin: no
+        weibo: no
+        instapaper: no
+        vk: no
+        all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
+  bookdown::pdf_book:
+    keep_tex: yes
+---
+
+# Using the Package in R {#packageinR}
+
+## Installation
+
+If you do not have R installed on your computer, please go to [Appendix 1](#appendix1). Once you have R installed, you can install this package in the R console:
+
+```{r chunk-label, eval = FALSE, echo = TRUE}
+install.packages("accept")
+```
+
+## ACCEPT Prediction Functions
+
+### Example
+
+To get started, there is an R data frame with the package of sample patient data:
+
+```{r sample-patients, eval = TRUE, echo = TRUE}
+library(accept)
+samplePatients
+```
+

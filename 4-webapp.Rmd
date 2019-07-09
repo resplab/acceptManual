@@ -1,0 +1,40 @@
+---
+title: "Acute COPD Exacerbation Prediction Tool (ACCEPT)"
+site: "bookdown::bookdown_site"
+runtime: "shiny"
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+    table_css: FALSE
+    css: ["pretty-styles.css", "cayman.css", "python.css"]
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit : null
+      download: null
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: yes
+        twitter: yes
+        google: no
+        linkedin: no
+        weibo: no
+        instapaper: no
+        vk: no
+        all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
+  bookdown::pdf_book:
+    keep_tex: yes
+---
+
+# Using the Web Application {#webapp}
+
+We have created a web application which can be found here: [ACCEPT Prediction App](http://resp.core.ubc.ca/ipress/accept)

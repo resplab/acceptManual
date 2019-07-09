@@ -1,0 +1,50 @@
+---
+title: "Acute COPD Exacerbation Prediction Tool (ACCEPT)"
+site: "bookdown::bookdown_site"
+runtime: "shiny"
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+    table_css: FALSE
+    css: ["pretty-styles.css", "cayman.css", "python.css"]
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit : null
+      download: null
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: yes
+        twitter: yes
+        google: no
+        linkedin: no
+        weibo: no
+        instapaper: no
+        vk: no
+        all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
+  bookdown::pdf_book:
+    keep_tex: yes
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = ">"
+)
+```
+# Introduction {#introduction}
+
+The purpose of this package is to predict future COPD exacerbation rates and severity based on past exacerbation rates.
+
+It might be helpful to take a look at the ACCEPT web application before reading further, as this gives a visualization of the package: [ACCEPT Web Application](#webapp).
+
+
