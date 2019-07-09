@@ -37,4 +37,10 @@ output:
 
 # Using the Web Application {#webapp}
 
-We have created a web application which can be found here: [ACCEPT Prediction App](http://resp.core.ubc.ca/ipress/accept)
+We have created a web application which can be found here:
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("webapp.html"), collapse="\n")
+HTML(rawHTML)
+```
