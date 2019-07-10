@@ -235,8 +235,10 @@ a:hover {
 */
 
 :root {
-  --color-a: #330033; // purple
-  --color-b: #4cdef5; // blue
+  --color-a: #330033; /* purple */
+  --color-b: #8cf2f2; /* cyan */
+  --color-c: #c51672; /* magenta */
+  --color-d: #007bff; /* primary blue */
 }
 
 

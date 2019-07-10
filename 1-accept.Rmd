@@ -41,6 +41,10 @@ knitr::opts_chunk$set(
   comment = ">"
 )
 ```
+
+```{r, echo = FALSE, eval = TRUE}
+themeColors = c("#330033", "#8cf2f2", "#c51672", "#007bff")
+```
 # Introduction {#introduction}
 
 The purpose of this package is to predict future COPD exacerbation rates and severity based on past exacerbation rates.

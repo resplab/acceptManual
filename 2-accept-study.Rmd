@@ -100,9 +100,9 @@ Masking: Triple (Participant, Investigator, Care-Provider)
 ```{r diagram, eval = TRUE, echo = FALSE}
 library(DiagrammeR)
 nodes <- create_node_df(n=3, type = "character",
-                        color = "#330033",
+                        color = themeColors[1],
                         fontcolor = "white",
-                        fillcolor = "#330033",
+                        fillcolor = themeColors[1],
                         shape = "oval",
                         fontsize = 4,
                         label = c("All \n Participants","Placebo", 
@@ -111,7 +111,7 @@ nodes <- create_node_df(n=3, type = "character",
 edges <- create_edge_df(from = c(1, 1),
                         to = c(2, 3),
                        rel = "leading to",
-                       color = "#4cdef5")
+                       color = themeColors[2])
 
 graph <- create_graph(nodes_df = nodes, 
                       edges_df = edges) 
@@ -153,9 +153,9 @@ Masking: Triple (Participant, Investigator, Care-Provider)
 ```{r diagram2, eval = TRUE, echo = FALSE}
 library(DiagrammeR)
 nodes <- create_node_df(n=3, type = "character",
-                        color = "#330033",
+                        color = themeColors[1],
                         fontcolor = "white",
-                        fillcolor = "#330033",
+                        fillcolor = themeColors[1],
                         shape = "oval",
                         fontsize = 4,
                         label = c("All \n Participants","Placebo", 
@@ -164,7 +164,7 @@ nodes <- create_node_df(n=3, type = "character",
 edges <- create_edge_df(from = c(1, 1),
                         to = c(2, 3),
                        rel = "leading to",
-                       color = "#4cdef5")
+                       color = themeColors[2])
 
 graph <- create_graph(nodes_df = nodes, 
                       edges_df = edges) 
@@ -207,9 +207,9 @@ Masking: Double (Participant, Investigator)
 ```{r diagram3, eval = TRUE, echo = FALSE}
 library(DiagrammeR)
 nodes <- create_node_df(n=4, type = "character",
-                        color = "#330033",
+                        color = themeColors[1],
                         fontcolor = "white",
-                        fillcolor = "#330033",
+                        fillcolor = themeColors[1],
                         shape = "oval",
                         fontsize = 4,
                         label = c("All \n Participants","Placebo \n Inhaler", 
@@ -219,7 +219,7 @@ nodes <- create_node_df(n=4, type = "character",
 edges <- create_edge_df(from = c(1, 1, 1),
                         to = c(2, 3, 4),
                        rel = "leading to",
-                       color = "#4cdef5")
+                       color = themeColors[2])
 
 graph <- create_graph(nodes_df = nodes, 
                       edges_df = edges) 

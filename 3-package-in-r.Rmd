@@ -59,7 +59,15 @@ samplePatients
 
 ### Exacerbation Rate {-}
 
+```{r exacerbation-rate, eval = TRUE, echo = TRUE}
+results <- predictACCEPT(samplePatients[1,])
+plotExacerbations(results)
+```
 
+```{r exacerbation-rate-2, eval = TRUE, echo = TRUE}
+results <- predictACCEPT(samplePatients[1,])
+plotExacerbations(results, type="rate")
+```
 
 ### Probability of N Exacerbations (Poisson) {-}
 

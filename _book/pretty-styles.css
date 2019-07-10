@@ -1,3 +1,11 @@
+:root {
+  --color-a: #330033; /* purple */
+  --color-b: #8cf2f2; /* cyan */
+  --color-c: #c51672; /* magenta */
+  --color-d: #007bff; /* primary blue */
+}
+
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 /**
@@ -253,12 +261,6 @@ samp {
 /**
  * Remove most spacing between table cells.
  */
- 
- 
-:root {
-  --color-a: #330033; // purple
-  --color-b: #4cdef5; // blue
-}
 
 table {
   border-spacing: 0;
