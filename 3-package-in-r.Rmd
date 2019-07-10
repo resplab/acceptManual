@@ -50,22 +50,34 @@ devtools::install_github("resplab/accept")
 
 ### Sample Data {-}
 
-To get started, there is an R data frame with the package of sample patient data:
+To get started, there is an R data frame with the package of sample patient data. I have printed columns 1-13 and 14-19 separately because there isn't enough space:
 
 ```{r sample-patients, eval = TRUE, echo = TRUE}
 library(accept)
-samplePatients
+print(samplePatients[,1:13])
+print(samplePatients[,14:19])
 ```
 
 ### Exacerbation Rate {-}
 
+To get a prediction for exacerbation rate, you will need to pass in a patient vector:
+
 ```{r exacerbation-rate, eval = TRUE, echo = TRUE}
 results <- predictACCEPT(samplePatients[1,])
-plotExacerbations(results)
+print(t(results))
+```
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("predictACCEPT-inputs.html"), collapse="\n")
+HTML(rawHTML)
 ```
 
 ```{r exacerbation-rate-2, eval = TRUE, echo = TRUE}
-results <- predictACCEPT(samplePatients[1,])
+plotExacerbations(results, type="probability")
+```
+
+```{r exacerbation-rate-3, eval = TRUE, echo = TRUE}
 plotExacerbations(results, type="rate")
 ```
 

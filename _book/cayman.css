@@ -317,6 +317,7 @@ code span.co {
   color: #fff !important;
 }
 
+
 /* Cards with Icons */
 
 .book .book-body .page-wrapper .page-inner section.normal .card.card-icon {
@@ -353,4 +354,14 @@ code span.co {
     text-decoration-style: initial;
 }
 
+/* R Code */
+
+code span.er {
+    color: var(--color-b);
+    font-weight: bold;
+}
+
+code span.dt {
+    color: var(--color-d);
+}
 
