@@ -7,6 +7,7 @@ output:
     lib_dir: "book_assets"
     table_css: FALSE
     css: ["pretty-styles.css", "cayman.css", "python.css"]
+    js: "js/list-group.js"
     config:
       toc:
         collapse: subsection
