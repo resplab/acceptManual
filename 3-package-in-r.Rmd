@@ -62,15 +62,15 @@ print(samplePatients[,14:19])
 
 To get a prediction for exacerbation rate, you will need to pass in a patient vector:
 
-```{r exacerbation-rate, eval = TRUE, echo = TRUE}
-results <- predictACCEPT(samplePatients[1,])
-print(t(results))
-```
-
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
 rawHTML <- paste(readLines("predictACCEPT-inputs.html"), collapse="\n")
 HTML(rawHTML)
+```
+
+```{r exacerbation-rate, eval = TRUE, echo = TRUE}
+results <- predictACCEPT(samplePatients[1,])
+print(t(results))
 ```
 
 ```{r exacerbation-rate-2, eval = TRUE, echo = TRUE}

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Using the Web Application | FEV1 Prediction Model for COPD</title>
-  <meta name="description" content="5 Using the Web Application | FEV1 Prediction Model for COPD" />
+  <title>4 Using the Web Application | Acute COPD Exacerbation Prediction Tool (ACCEPT)</title>
+  <meta name="description" content="4 Using the Web Application | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Using the Web Application | FEV1 Prediction Model for COPD" />
+  <meta property="og:title" content="4 Using the Web Application | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Using the Web Application | FEV1 Prediction Model for COPD" />
+  <meta name="twitter:title" content="4 Using the Web Application | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
   
   
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="section-using-the-package-as-an-api-prism.html">
+<link rel="prev" href="section-packageinR.html">
 <link rel="next" href="section-appendix1.html">
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -137,45 +137,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="section-thestudy.html"><a href="section-thestudy.html"><i class="fa fa-check"></i><b>2</b> The Study</a><ul>
-<li class="chapter" data-level="2.1" data-path="section-thestudy.html"><a href="section-thestudy.html#section-background"><i class="fa fa-check"></i><b>2.1</b> Background</a></li>
-<li class="chapter" data-level="2.2" data-path="section-thestudy.html"><a href="section-thestudy.html#section-studyPopulation"><i class="fa fa-check"></i><b>2.2</b> The Study Population</a></li>
-<li class="chapter" data-level="2.3" data-path="section-thestudy.html"><a href="section-thestudy.html#section-study-group-divisions"><i class="fa fa-check"></i><b>2.3</b> Study Group Divisions</a><ul>
-<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-group-1-usual-care"><i class="fa fa-check"></i>Group 1: Usual Care</a></li>
-<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-group-2-smoking-intervention-and-placebo-inhaler"><i class="fa fa-check"></i>Group 2: Smoking Intervention and Placebo Inhaler</a></li>
-<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-group-3-smoking-intervention-and-bronchodilator-inhaler"><i class="fa fa-check"></i>Group 3: Smoking Intervention and Bronchodilator Inhaler</a></li>
+<li class="chapter" data-level="2.1" data-path="section-thestudy.html"><a href="section-thestudy.html#section-background"><i class="fa fa-check"></i><b>2.1</b> Background</a><ul>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-exacerbation-causes"><i class="fa fa-check"></i>Exacerbation Causes</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-exacerbation-severity"><i class="fa fa-check"></i>Exacerbation Severity</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="section-thestudy.html"><a href="section-thestudy.html#section-data-collection"><i class="fa fa-check"></i><b>2.4</b> Data Collection</a><ul>
+<li class="chapter" data-level="2.2" data-path="section-thestudy.html"><a href="section-thestudy.html#section-studyPopulation"><i class="fa fa-check"></i><b>2.2</b> The Study Population</a><ul>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-clinical-trial-1-macro"><i class="fa fa-check"></i>Clinical Trial 1: MACRO</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-clinical-trial-2-statcope"><i class="fa fa-check"></i>Clinical Trial 2: STATCOPE</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-clinical-trial-3-optimal"><i class="fa fa-check"></i>Clinical Trial 3: OPTIMAL</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="section-thestudy.html"><a href="section-thestudy.html#section-data-collection-combined-trials"><i class="fa fa-check"></i><b>2.3</b> Data Collection: Combined Trials</a><ul>
 <li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-primary-metric"><i class="fa fa-check"></i>Primary Metric</a></li>
 <li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-secondary-metrics"><i class="fa fa-check"></i>Secondary Metrics</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="section-packageinR.html"><a href="section-packageinR.html"><i class="fa fa-check"></i><b>3</b> Using the Package in R</a><ul>
 <li class="chapter" data-level="3.1" data-path="section-packageinR.html"><a href="section-packageinR.html#section-installation"><i class="fa fa-check"></i><b>3.1</b> Installation</a></li>
-<li class="chapter" data-level="3.2" data-path="section-packageinR.html"><a href="section-packageinR.html#section-fev1-prediction-function"><i class="fa fa-check"></i><b>3.2</b> FEV1 Prediction Function</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="section-packageinR.html"><a href="section-packageinR.html#section-example"><i class="fa fa-check"></i><b>3.2.1</b> Example</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="section-packageinR.html"><a href="section-packageinR.html#section-fev1-projection-models"><i class="fa fa-check"></i><b>3.3</b> FEV1 Projection Models</a><ul>
-<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-fev1-projection-model-1-basic-model"><i class="fa fa-check"></i>FEV1 Projection Model 1 Basic Model</a></li>
-<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-fev1-projection-model-2-complete-model-with-oconner-slope"><i class="fa fa-check"></i>FEV1 Projection Model 2 (Complete Model with O’Conner Slope)</a></li>
-<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-fev1-projection-model-3-complete-model-without-oconner-slope"><i class="fa fa-check"></i>FEV1 Projection Model 3 (Complete Model without O’Conner Slope)</a></li>
-<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-fev1-projection-model-4-extended-model"><i class="fa fa-check"></i>FEV1 Projection Model 4 (Extended Model)</a></li>
+<li class="chapter" data-level="3.2" data-path="section-packageinR.html"><a href="section-packageinR.html#section-accept-prediction-functions"><i class="fa fa-check"></i><b>3.2</b> ACCEPT Prediction Functions</a><ul>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-sample-data"><i class="fa fa-check"></i>Sample Data</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-exacerbation-rate"><i class="fa fa-check"></i>Exacerbation Rate</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-probability-of-n-exacerbations-poisson"><i class="fa fa-check"></i>Probability of N Exacerbations (Poisson)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html"><i class="fa fa-check"></i><b>4</b> Using the Package as an API (PRISM)</a><ul>
-<li class="chapter" data-level="4.1" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-prism-in-r"><i class="fa fa-check"></i><b>4.1</b> PRISM in R</a></li>
-<li class="chapter" data-level="4.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-prism-in-shell"><i class="fa fa-check"></i><b>4.2</b> PRISM in Shell</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-linux"><i class="fa fa-check"></i><b>4.2.1</b> Linux</a></li>
-<li class="chapter" data-level="4.2.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-mac-os"><i class="fa fa-check"></i><b>4.2.2</b> Mac OS</a></li>
-<li class="chapter" data-level="4.2.3" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-windows-powershell"><i class="fa fa-check"></i><b>4.2.3</b> Windows PowerShell</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-prism-in-python"><i class="fa fa-check"></i><b>4.3</b> PRISM in Python</a></li>
-<li class="chapter" data-level="4.4" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-prism-in-javascript"><i class="fa fa-check"></i><b>4.4</b> PRISM in Javascript</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="section-webapp.html"><a href="section-webapp.html"><i class="fa fa-check"></i><b>5</b> Using the Web Application</a></li>
-<li class="chapter" data-level="6" data-path="section-appendix1.html"><a href="section-appendix1.html"><i class="fa fa-check"></i><b>6</b> Appendix 1: Installing R</a><ul>
-<li class="chapter" data-level="6.1" data-path="section-appendix1.html"><a href="section-appendix1.html#section-step-1-mirrors"><i class="fa fa-check"></i><b>6.1</b> Step 1: Mirrors</a></li>
-<li class="chapter" data-level="6.2" data-path="section-appendix1.html"><a href="section-appendix1.html#section-mac-os-x"><i class="fa fa-check"></i><b>6.2</b> Mac OS X</a></li>
-<li class="chapter" data-level="6.3" data-path="section-appendix1.html"><a href="section-appendix1.html#section-windows"><i class="fa fa-check"></i><b>6.3</b> Windows</a></li>
+<li class="chapter" data-level="4" data-path="section-webapp.html"><a href="section-webapp.html"><i class="fa fa-check"></i><b>4</b> Using the Web Application</a></li>
+<li class="chapter" data-level="5" data-path="section-appendix1.html"><a href="section-appendix1.html"><i class="fa fa-check"></i><b>5</b> Appendix 1: Installing R</a><ul>
+<li class="chapter" data-level="5.1" data-path="section-appendix1.html"><a href="section-appendix1.html#section-step-1-mirrors"><i class="fa fa-check"></i><b>5.1</b> Step 1: Mirrors</a></li>
+<li class="chapter" data-level="5.2" data-path="section-appendix1.html"><a href="section-appendix1.html#section-mac-os-x"><i class="fa fa-check"></i><b>5.2</b> Mac OS X</a></li>
+<li class="chapter" data-level="5.3" data-path="section-appendix1.html"><a href="section-appendix1.html#section-windows"><i class="fa fa-check"></i><b>5.3</b> Windows</a></li>
 </ul></li>
 </ul>
 
@@ -186,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">FEV1 Prediction Model for COPD</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Acute COPD Exacerbation Prediction Tool (ACCEPT)</a>
           </h1>
         </div>
 
@@ -195,15 +184,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="section-webapp" class="section level1">
-<h1><span class="header-section-number">5</span> Using the Web Application</h1>
-<p>We have created a web application which can be found here: <a href="http://resp.core.ubc.ca/ipress/FEV1Pred">FEV1 Prediction App</a></p>
+<h1><span class="header-section-number">4</span> Using the Web Application</h1>
+<p>We have created a web application which can be found here:</p>
+<div class="card" style="width: 60rem;" id="web-app-card">
+  <img class="card-img-top" src="acceptWebApp.png" alt="Card image cap">
+  <div class="card-body">
+    <a href = "http://resp.core.ubc.ca/ipress/accept" target="_blank">
+    <h5 class="card-title">ACCEPT Web Application</h5></a>
+  </div>
+</div>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="section-using-the-package-as-an-api-prism.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-packageinR.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="section-appendix1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -238,7 +235,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

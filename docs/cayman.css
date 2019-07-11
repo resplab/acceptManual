@@ -235,8 +235,10 @@ a:hover {
 */
 
 :root {
-  --color-a: #330033; // purple
-  --color-b: #4cdef5; // blue
+  --color-a: #330033; /* purple */
+  --color-b: #8cf2f2; /* cyan */
+  --color-c: #c51672; /* magenta */
+  --color-d: #007bff; /* primary blue */
 }
 
 
@@ -298,5 +300,68 @@ code span.co {
     text-decoration: none;
 }
 
+.list-group-item h5:before {
+    padding-right: 0.3em;
+    margin-left: 0em;
+    content: "";
+    color: #9ddcff;
+}
 
+.list-group-static .list-group-item.active h5.mb-1 {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.list-group-static .list-group-item.active {
+  color: #fff !important;
+}
+
+
+/* Cards with Icons */
+
+.book .book-body .page-wrapper .page-inner section.normal .card.card-icon {
+  padding: 10px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card.card-icon .card-body {
+    background-color: white;
+    color: black;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card.card-icon .card-title {
+    background-color: white;
+    color: var(--color-a);
+    font-weight: bold;
+}
+.fa, .far, .fas {
+    color: var(--color-a);
+}
+
+/* Web App Card */
+
+.book .book-body .page-wrapper .page-inner section.normal #web-app-card.card .card-body {
+    background-color: var(--color-a);
+    padding: 10px;
+    font-size: 2.1rem;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:active, .book .book-body .page-wrapper .page-inner section.normal a:focus, .book .book-body .page-wrapper .page-inner section.normal #web-app-card.card a:hover {
+    outline: 0;
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    text-decoration-style: initial;
+}
+
+/* R Code */
+
+code span.er {
+    color: var(--color-b);
+    font-weight: bold;
+}
+
+code span.dt {
+    color: var(--color-d);
+}
 
