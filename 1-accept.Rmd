@@ -5,8 +5,10 @@ runtime: "shiny"
 output:
   bookdown::gitbook:
     lib_dir: "book_assets"
+    delete_merged_file: TRUE
     table_css: FALSE
-    css: ["pretty-styles.css", "cayman.css", "python.css"]
+    output_dir: "docs"
+    css: ["pretty-styles.css", "cayman.css", "python.css", "index.html"]
     js: "js/list-group.js"
     config:
       toc:

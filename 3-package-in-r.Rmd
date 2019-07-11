@@ -54,6 +54,7 @@ To get started, there is an R data frame with the package of sample patient data
 
 ```{r sample-patients, eval = TRUE, echo = TRUE}
 library(accept)
+samplePatients = accept::samplePatients
 print(samplePatients[,1:13])
 print(samplePatients[,14:19])
 ```
