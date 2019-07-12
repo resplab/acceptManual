@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Using the Web Application | Acute COPD Exacerbation Prediction Tool (ACCEPT)</title>
-  <meta name="description" content="4 Using the Web Application | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
+  <title>5 Using the Package as an API (PRISM) | Acute COPD Exacerbation Prediction Tool (ACCEPT)</title>
+  <meta name="description" content="5 Using the Package as an API (PRISM) | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Using the Web Application | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
+  <meta property="og:title" content="5 Using the Package as an API (PRISM) | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Using the Web Application | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
+  <meta name="twitter:title" content="5 Using the Package as an API (PRISM) | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="section-packageinR.html">
-<link rel="next" href="section-using-the-package-as-an-api-prism.html">
+<link rel="prev" href="section-webapp.html">
+<link rel="next" href="section-appendix1.html">
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -194,25 +194,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="section-webapp" class="section level1">
-<h1><span class="header-section-number">4</span> Using the Web Application</h1>
-<p>We have created a web application which can be found here:</p>
-<div class="card" style="width: 60rem;" id="web-app-card">
-  <img class="card-img-top" src="acceptWebApp.png" alt="Card image cap">
-  <div class="card-body">
-    <a href = "http://resp.core.ubc.ca/ipress/accept" target="_blank">
-    <h5 class="card-title">ACCEPT Web Application</h5></a>
-  </div>
+<div id="section-using-the-package-as-an-api-prism" class="section level1">
+<h1><span class="header-section-number">5</span> Using the Package as an API (PRISM)</h1>
+<p>PRISM (Programmable Interface for Simulation/Statistical Models) is a package which provides a user-friendly API interface in R for clinical prediction and decision analytics models hosted on UBC PRISM cloud.</p>
+<p>For more information, the PRISM package can be found on GitHub at <a href="https://github.com/resplab/prism">PRISM on GitHub</a>.</p>
+<div id="section-r-api" class="section level2">
+<h2><span class="header-section-number">5.1</span> R API</h2>
+<p>To install PRISM in R, you will need to install it from GitHub. In an R Console:</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;resplab/prism&quot;</span>)</code></pre>
+<p>To use PRISM in R:</p>
+<!-- ```{r prism-accept, eval = TRUE, echo = TRUE} -->
+<!-- library(prism) -->
+<!-- connect_to_model("acceptPrism", api_key = your_api_key) -->
+<!-- patient1 <- accept::samplePatients[1,] -->
+<!-- model_run(patient1) -->
+<!-- res <- as.data.frame(model_run(patient1)) -->
+<!-- ``` -->
 </div>
+<div id="section-shellbash-api" class="section level2">
+<h2><span class="header-section-number">5.2</span> Shell/Bash API</h2>
+<div id="section-linux" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Linux</h3>
+<p>You will need curl installed to use the API. To check if you have curl:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">dpkg</span> -l curl</code></pre>
+<p>If you do not have curl, you can install it by:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install curl</code></pre>
+<!-- ```{bash prism-linux, eval = FALSE, echo = TRUE} -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
+<!-- ```{bash prism-linux2, eval = TRUE, echo = FALSE} -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
+</div>
+<div id="section-mac-os" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Mac OS</h3>
+<p>You will need curl installed to use the API. To check if you have curl:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> list curl</code></pre>
+<p>If you do not have curl, you can install it using HomeBrew:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> install curl</code></pre>
+<!-- ```{bash prism-mac, eval = FALSE, echo = TRUE} -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
+<!-- ```{bash prism-mac2, eval = TRUE, echo = FALSE} -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
+<!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
+</div>
+<div id="section-windows-powershell" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Windows PowerShell</h3>
+<p>In PowerShell:</p>
+<!-- ```{bash prism-windows, eval=FALSE, echo = TRUE} -->
+<!-- curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"} -->
+<!-- ``` -->
+<!-- ```{bash prism-windows2, eval = TRUE, echo = FALSE} -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
+<!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
+</div>
+</div>
+<div id="section-python-api" class="section level2">
+<h2><span class="header-section-number">5.3</span> Python API</h2>
+<p>For this, we are assuming the use of Python 3.</p>
+<p>To get started, you will need to import the <strong>json</strong> and <strong>requests</strong> libraries. To install, open a terminal:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pip3</span> install requests</code></pre>
+<p>We will start with the GET request. If everything is working, this should return 200 as a response.</p>
+<!-- ```{python prism-python-get, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- import json -->
+<!-- import requests -->
+<!-- response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json") -->
+<!-- print(response) -->
+<!-- ``` -->
+<p>For the POST request, we will send some patient data to the API, and should get a prediction back from the API.</p>
+<!-- ```{python prism-python2, eval = FALSE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- api_key = 'YOUR_API_KEY' -->
+<!-- patientInput = [{ -->
+<!-- "ID":"10001", -->
+<!-- "male":1, -->
+<!-- "age":70, -->
+<!-- "smoker":1, -->
+<!-- "FEV1":2.5, -->
+<!-- "height":1.68, -->
+<!-- "weight":65 -->
+<!-- }] -->
+<!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",  -->
+<!--   json = {"api_key":[api_key], -->
+<!--   "func": ["prism_model_run"], -->
+<!--   "model_input": patientInput}) -->
+<!-- print(response) -->
+<!-- results = json.loads(response.text) -->
+<!-- print(results) -->
+<!-- ``` -->
+<!-- ```{python prism-python3, eval = TRUE, echo = FALSE, engine.path = pythonEngine} -->
+<!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json", json = {"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}) -->
+<!-- print(response) -->
+<!-- results = json.loads(response.text) -->
+<!-- print(results) -->
+<!-- ``` -->
+<p>We will put the results in a dictionary:</p>
+<!-- ```{python prism-python4, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- resultsDict = json.loads(results[0]) -->
+<!-- print(resultsDict) -->
+<!-- columnNames = list(resultsDict.keys()) -->
+<!-- print(columnNames) -->
+<!-- ``` -->
+<p>To visualize the results using the package PrettyTable:</p>
+<!-- ```{python prism-python5, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- from prettytable import PrettyTable -->
+<!-- table = PrettyTable() -->
+<!-- table = PrettyTable() -->
+<!-- table.align["Year"] = "l" # Left align year -->
+<!-- table.padding_width = 1 # One space between column edges and contents (default) -->
+<!-- print(columnNames) -->
+<!-- for col in columnNames: -->
+<!--     table.add_column(col, resultsDict[col]) -->
+<!-- print(table) -->
+<!-- ``` -->
+</div>
+<div id="section-javascript-api" class="section level2">
+<h2><span class="header-section-number">5.4</span> Javascript API</h2>
+<p>To use the PRISM API in Javascript, you will need to use the XMLHttpRequest module. We will start by sending a GET request:</p>
+<!-- ```{js, eval=FALSE, echo=TRUE} -->
+<!-- request = new XMLHttpRequest(); -->
+<!-- request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); -->
+<!-- request.send(); -->
+<!-- ``` -->
+<p>The <strong>onreadystatechange</strong> is an XMLHttpRequest event which updates when the ready state changes. The ready state can be either 1, 2, 3, or 4.</p>
+<pre><code>&gt; null device 
+&gt;           1</code></pre>
+<!-- ```{r javascript2, eval = TRUE, echo = FALSE} -->
+<!-- knitr::kable( -->
+<!--   metadata, booktabs = TRUE -->
+<!-- ) -->
+<!-- ``` -->
+<!-- ```{js, eval=FALSE, echo=TRUE} -->
+<!-- request.onreadystatechange = function() { -->
+<!--             if(request.readyState === 4) { // -->
+<!--                 if(request.status === 200) { -->
+<!--                     console.log(request.responseText); -->
+<!--                 } else { -->
+<!--                        console.log(request.status); -->
+<!--                 } -->
+<!--             } -->
+<!--         } -->
+<!-- ``` -->
+<p>To get a prediction, we can send a POST request. We will first create an example patient using json:</p>
+<!-- ```{js, eval=FALSE} -->
+<!-- let patient = JSON.stringify({ -->
+<!--   api_key: 123456, -->
+<!--   func: ["prism_model_run"], -->
+<!--   model_input: [{ -->
+<!--     ID: 10001, -->
+<!--     male: 1, -->
+<!--     age: 70, -->
+<!--     smoker: 1, -->
+<!--     FEV1: 2.5, -->
+<!--     height: 1.68, -->
+<!--     weight: 65 -->
+<!--   }] -->
+<!-- }); -->
+<!-- ``` -->
+<p>We need to set the request header to json, and then send our patient json to the PRISM server using the <strong>request.send()</strong> function.</p>
+<!-- ```{js, eval=FALSE} -->
+<!-- request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); -->
+<!-- request.setRequestHeader('Content-Type', 'application/json'); -->
+<!-- request.send(patient); // Send request -->
+<!-- let results = request.response; -->
+<!-- ``` -->
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="section-packageinR.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="section-using-the-package-as-an-api-prism.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="section-webapp.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-appendix1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>

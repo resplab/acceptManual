@@ -354,6 +354,35 @@ code span.co {
     text-decoration-style: initial;
 }
 
+/* Basic Cards */
+
+.book .book-body .page-wrapper .page-inner section.normal .card .card-body.basic h5 {
+  color: black;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card .card-body.basic {
+  background-color: white;
+}
+.book .book-body .page-wrapper .page-inner section.normal .card.basic {
+  border: 1px solid rgba(251, 230, 230, 0.85) !important;
+  min-height: 220px;
+}
+
+.card-body h5::before,
+.card-body h6::before {
+    padding-right: 0.3em;
+    margin-left: -2.4em;
+    content: unset;
+    color: #9ddcff;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card .basic h5,
+.book .book-body .page-wrapper .page-inner section.normal .card .basic h6 {
+    margin-top: .8em;
+    margin-bottom: .8em !important;
+}
+
+
 /* R Code */
 
 code span.er {

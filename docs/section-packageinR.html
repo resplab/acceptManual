@@ -123,6 +123,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link rel="stylesheet" href="pretty-styles.css" type="text/css" />
 <link rel="stylesheet" href="cayman.css" type="text/css" />
 <link rel="stylesheet" href="python.css" type="text/css" />
+<link rel="stylesheet" href="index.html" type="text/css" />
 </head>
 
 <body>
@@ -161,10 +162,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="section-webapp.html"><a href="section-webapp.html"><i class="fa fa-check"></i><b>4</b> Using the Web Application</a></li>
-<li class="chapter" data-level="5" data-path="section-appendix1.html"><a href="section-appendix1.html"><i class="fa fa-check"></i><b>5</b> Appendix 1: Installing R</a><ul>
-<li class="chapter" data-level="5.1" data-path="section-appendix1.html"><a href="section-appendix1.html#section-step-1-mirrors"><i class="fa fa-check"></i><b>5.1</b> Step 1: Mirrors</a></li>
-<li class="chapter" data-level="5.2" data-path="section-appendix1.html"><a href="section-appendix1.html#section-mac-os-x"><i class="fa fa-check"></i><b>5.2</b> Mac OS X</a></li>
-<li class="chapter" data-level="5.3" data-path="section-appendix1.html"><a href="section-appendix1.html#section-windows"><i class="fa fa-check"></i><b>5.3</b> Windows</a></li>
+<li class="chapter" data-level="5" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html"><i class="fa fa-check"></i><b>5</b> Using the Package as an API (PRISM)</a><ul>
+<li class="chapter" data-level="5.1" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-r-api"><i class="fa fa-check"></i><b>5.1</b> R API</a></li>
+<li class="chapter" data-level="5.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-shellbash-api"><i class="fa fa-check"></i><b>5.2</b> Shell/Bash API</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-linux"><i class="fa fa-check"></i><b>5.2.1</b> Linux</a></li>
+<li class="chapter" data-level="5.2.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-mac-os"><i class="fa fa-check"></i><b>5.2.2</b> Mac OS</a></li>
+<li class="chapter" data-level="5.2.3" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-windows-powershell"><i class="fa fa-check"></i><b>5.2.3</b> Windows PowerShell</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-python-api"><i class="fa fa-check"></i><b>5.3</b> Python API</a></li>
+<li class="chapter" data-level="5.4" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-javascript-api"><i class="fa fa-check"></i><b>5.4</b> Javascript API</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-appendix1.html"><a href="section-appendix1.html"><i class="fa fa-check"></i><b>6</b> Appendix 1: Installing R</a><ul>
+<li class="chapter" data-level="6.1" data-path="section-appendix1.html"><a href="section-appendix1.html#section-step-1-mirrors"><i class="fa fa-check"></i><b>6.1</b> Step 1: Mirrors</a></li>
+<li class="chapter" data-level="6.2" data-path="section-appendix1.html"><a href="section-appendix1.html#section-mac-os-x"><i class="fa fa-check"></i><b>6.2</b> Mac OS X</a></li>
+<li class="chapter" data-level="6.3" data-path="section-appendix1.html"><a href="section-appendix1.html#section-windows"><i class="fa fa-check"></i><b>6.3</b> Windows</a></li>
 </ul></li>
 </ul>
 
@@ -197,6 +208,7 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <h3>Sample Data</h3>
 <p>To get started, there is an R data frame with the package of sample patient data. I have printed columns 1-13 and 14-19 separately because there isn’t enough space:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(accept)
+samplePatients =<span class="st"> </span>accept<span class="op">::</span>samplePatients
 <span class="kw">print</span>(samplePatients[,<span class="dv">1</span><span class="op">:</span><span class="dv">13</span>])
 <span class="op">&gt;</span><span class="st"> </span><span class="co"># A tibble: 2 x 13</span>
 <span class="er">&gt;</span><span class="st">   </span>ID     male   age smoker oxygen statin  LAMA  LABA   ICS  FEV1   BMI
@@ -211,72 +223,6 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <span class="er">&gt;</span><span class="st"> </span><span class="dv">1</span>                <span class="dv">1</span>                <span class="dv">0</span>                <span class="dv">0</span>               <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span>                <span class="dv">0</span>                <span class="dv">0</span>                <span class="dv">0</span>               <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="co"># … with 2 more variables: randomized_LABA &lt;dbl&gt;, randomized_ICS &lt;dbl&gt;</span></code></pre>
-</div>
-<div id="section-exacerbation-rate" class="section level3 unnumbered">
-<h3>Exacerbation Rate</h3>
-<p>To get a prediction for exacerbation rate, you will need to pass in a patient vector:</p>
-<pre class="sourceCode r"><code class="sourceCode r">results &lt;-<span class="st"> </span><span class="kw">predictACCEPT</span>(samplePatients[<span class="dv">1</span>,])
-<span class="kw">print</span>(<span class="kw">t</span>(results))
-<span class="op">&gt;</span><span class="st">                                                         </span>[,<span class="dv">1</span>]        
-<span class="op">&gt;</span><span class="st"> </span>ID                                                      <span class="st">&quot;10001&quot;</span>     
-<span class="op">&gt;</span><span class="st"> </span>male                                                    <span class="st">&quot;1&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>age                                                     <span class="st">&quot;70&quot;</span>        
-<span class="op">&gt;</span><span class="st"> </span>smoker                                                  <span class="st">&quot;1&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>oxygen                                                  <span class="st">&quot;1&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>statin                                                  <span class="st">&quot;1&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>LAMA                                                    <span class="st">&quot;1&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>LABA                                                    <span class="st">&quot;1&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>ICS                                                     <span class="st">&quot;1&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>FEV1                                                    <span class="st">&quot;33&quot;</span>        
-<span class="op">&gt;</span><span class="st"> </span>BMI                                                     <span class="st">&quot;25&quot;</span>        
-<span class="op">&gt;</span><span class="st"> </span>SGRQ                                                    <span class="st">&quot;50&quot;</span>        
-<span class="op">&gt;</span><span class="st"> </span>LastYrExacCount                                         <span class="st">&quot;2&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>LastYrSevExacCount                                      <span class="st">&quot;1&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>randomized_azithromycin                                 <span class="st">&quot;0&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>randomized_statin                                       <span class="st">&quot;0&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>randomized_LAMA                                         <span class="st">&quot;0&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>randomized_LABA                                         <span class="st">&quot;0&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>randomized_ICS                                          <span class="st">&quot;0&quot;</span>         
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability                              <span class="st">&quot;0.774199&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate                                     <span class="st">&quot;1.763484&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability                 <span class="st">&quot;0.6967331&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate                        <span class="st">&quot;1.367712&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability                       <span class="st">&quot;0.4329349&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate                              <span class="st">&quot;0.7372756&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability          <span class="st">&quot;0.4194454&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate                 <span class="st">&quot;0.5535309&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability_lower_PI                     <span class="st">&quot;0.4421977&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability_upper_PI                     <span class="st">&quot;0.9778238&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate_lower_PI                            <span class="st">&quot;0.5837508&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate_upper_PI                            <span class="st">&quot;3.808736&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability_lower_PI        <span class="st">&quot;0.3641177&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability_upper_PI        <span class="st">&quot;0.9478669&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate_lower_PI               <span class="st">&quot;0.4527418&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate_upper_PI               <span class="st">&quot;2.953956&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability_lower_PI              <span class="st">&quot;0.05536533&quot;</span>
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability_upper_PI              <span class="st">&quot;0.8963172&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate_lower_PI                     <span class="st">&quot;0.0822562&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate_upper_PI                     <span class="st">&quot;2.111339&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability_lower_PI <span class="st">&quot;0.05169008&quot;</span>
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability_upper_PI <span class="st">&quot;0.8893765&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate_lower_PI        <span class="st">&quot;0.05959772&quot;</span>
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate_upper_PI        <span class="st">&quot;1.613594&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability_lower_CI                     <span class="st">&quot;0.7652888&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability_upper_CI                     <span class="st">&quot;0.7834641&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate_lower_CI                            <span class="st">&quot;1.712704&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate_upper_CI                            <span class="st">&quot;1.814521&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability_lower_CI        <span class="st">&quot;0.6869743&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability_upper_CI        <span class="st">&quot;0.7062002&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate_lower_CI               <span class="st">&quot;1.326418&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate_upper_CI               <span class="st">&quot;1.406206&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability_lower_CI              <span class="st">&quot;0.4183222&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability_upper_CI              <span class="st">&quot;0.4483516&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate_lower_CI                     <span class="st">&quot;0.7059947&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate_upper_CI                     <span class="st">&quot;0.7710413&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability_lower_CI <span class="st">&quot;0.4049882&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability_upper_CI <span class="st">&quot;0.433792&quot;</span>  
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate_lower_CI        <span class="st">&quot;0.5276065&quot;</span> 
-<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate_upper_CI        <span class="st">&quot;0.5791042&quot;</span></code></pre>
 <head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -379,13 +325,216 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 
 </div>
 <br>
-<br>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotExacerbations</span>(results, <span class="dt">type=</span><span class="st">&quot;probability&quot;</span>)</code></pre>
-<div id="htmlwidget-913640cf8a998038dda9" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-913640cf8a998038dda9">{"x":{"visdat":{"6cb878cb7cc4":["function () ","plotlyVisDat"]},"cur_data":"6cb878cb7cc4","attrs":{"6cb878cb7cc4":{"x":{},"y":{},"marker":{"color":"#007bff"},"name":"No Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"6cb878cb7cc4.1":{"x":{},"y":{},"marker":{"color":"rgb(204,204,204)"},"name":"Azithromycin Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":100,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Exacerbation Type","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["Overall","Severe"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Probability of an Exacerbation in Next Year"},"barmode":"group","hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Overall","Severe"],"y":[0.774198985868142,0.432934928087039],"marker":{"color":"#007bff","line":{"color":"rgba(31,119,180,1)"}},"name":"No Treatment","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Overall","Severe"],"y":[0.696733074811173,0.419445431053023],"marker":{"color":"rgb(204,204,204)","line":{"color":"rgba(255,127,14,1)"}},"name":"Azithromycin Treatment","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotExacerbations</span>(results, <span class="dt">type=</span><span class="st">&quot;rate&quot;</span>)</code></pre>
-<div id="htmlwidget-8542ad827b7fa3b0a71a" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8542ad827b7fa3b0a71a">{"x":{"visdat":{"6cb81b71001f":["function () ","plotlyVisDat"]},"cur_data":"6cb81b71001f","attrs":{"6cb81b71001f":{"x":{},"y":{},"marker":{"color":"#007bff"},"name":"No Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"6cb81b71001f.1":{"x":{},"y":{},"marker":{"color":"rgb(204,204,204)"},"name":"Azithromycin Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":100,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Exacerbation Type","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["Overall","Severe"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Predicted Exacerbation Rate in Next Year"},"barmode":"group","hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Overall","Severe"],"y":[1.76348403738653,0.737275620515369],"marker":{"color":"#007bff","line":{"color":"rgba(31,119,180,1)"}},"name":"No Treatment","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Overall","Severe"],"y":[1.367711843091,0.553530937224224],"marker":{"color":"rgb(204,204,204)","line":{"color":"rgba(255,127,14,1)"}},"name":"Azithromycin Treatment","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="section-exacerbation-rate" class="section level3 unnumbered">
+<h3>Exacerbation Rate</h3>
+<p>To get a prediction for exacerbation rate, you will need to pass in a patient vector:</p>
+<pre class="sourceCode r"><code class="sourceCode r">results &lt;-<span class="st"> </span><span class="kw">predictACCEPT</span>(samplePatients[<span class="dv">1</span>,])
+<span class="kw">print</span>(<span class="kw">t</span>(results))
+<span class="op">&gt;</span><span class="st">                                                         </span>[,<span class="dv">1</span>]        
+<span class="op">&gt;</span><span class="st"> </span>ID                                                      <span class="st">&quot;10001&quot;</span>     
+<span class="op">&gt;</span><span class="st"> </span>male                                                    <span class="st">&quot;1&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>age                                                     <span class="st">&quot;70&quot;</span>        
+<span class="op">&gt;</span><span class="st"> </span>smoker                                                  <span class="st">&quot;1&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>oxygen                                                  <span class="st">&quot;1&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>statin                                                  <span class="st">&quot;1&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>LAMA                                                    <span class="st">&quot;1&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>LABA                                                    <span class="st">&quot;1&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>ICS                                                     <span class="st">&quot;1&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>FEV1                                                    <span class="st">&quot;33&quot;</span>        
+<span class="op">&gt;</span><span class="st"> </span>BMI                                                     <span class="st">&quot;25&quot;</span>        
+<span class="op">&gt;</span><span class="st"> </span>SGRQ                                                    <span class="st">&quot;50&quot;</span>        
+<span class="op">&gt;</span><span class="st"> </span>LastYrExacCount                                         <span class="st">&quot;2&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>LastYrSevExacCount                                      <span class="st">&quot;1&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>randomized_azithromycin                                 <span class="st">&quot;0&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>randomized_statin                                       <span class="st">&quot;0&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>randomized_LAMA                                         <span class="st">&quot;0&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>randomized_LABA                                         <span class="st">&quot;0&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>randomized_ICS                                          <span class="st">&quot;0&quot;</span>         
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability                              <span class="st">&quot;0.7807515&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate                                     <span class="st">&quot;1.798276&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability                 <span class="st">&quot;0.7037069&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate                        <span class="st">&quot;1.394696&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability                       <span class="st">&quot;0.4364595&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate                              <span class="st">&quot;0.7573594&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability          <span class="st">&quot;0.4227705&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate                 <span class="st">&quot;0.5684321&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability_lower_PI                     <span class="st">&quot;0.4442947&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability_upper_PI                     <span class="st">&quot;0.9811629&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate_lower_PI                            <span class="st">&quot;0.587518&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate_upper_PI                            <span class="st">&quot;3.971931&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability_lower_PI        <span class="st">&quot;0.3659725&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability_upper_PI        <span class="st">&quot;0.9540647&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate_lower_PI               <span class="st">&quot;0.4556635&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate_upper_PI               <span class="st">&quot;3.080525&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability_lower_PI              <span class="st">&quot;0.06694166&quot;</span>
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability_upper_PI              <span class="st">&quot;0.9105154&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate_lower_PI                     <span class="st">&quot;0.09444806&quot;</span>
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate_upper_PI                     <span class="st">&quot;2.083589&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability_lower_PI <span class="st">&quot;0.06254886&quot;</span>
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability_upper_PI <span class="st">&quot;0.9044238&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate_lower_PI        <span class="st">&quot;0.06867758&quot;</span>
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate_upper_PI        <span class="st">&quot;1.570742&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability_lower_CI                     <span class="st">&quot;0.7721256&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_probability_upper_CI                     <span class="st">&quot;0.7899343&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate_lower_CI                            <span class="st">&quot;1.740555&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>predicted_exac_rate_upper_CI                            <span class="st">&quot;1.846944&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability_lower_CI        <span class="st">&quot;0.6936858&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_probability_upper_CI        <span class="st">&quot;0.7127476&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate_lower_CI               <span class="st">&quot;1.354372&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_exac_rate_upper_CI               <span class="st">&quot;1.43476&quot;</span>   
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability_lower_CI              <span class="st">&quot;0.4224279&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_probability_upper_CI              <span class="st">&quot;0.4508709&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate_lower_CI                     <span class="st">&quot;0.722835&quot;</span>  
+<span class="op">&gt;</span><span class="st"> </span>predicted_severe_exac_rate_upper_CI                     <span class="st">&quot;0.7896598&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability_lower_CI <span class="st">&quot;0.4093059&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_probability_upper_CI <span class="st">&quot;0.4375629&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate_lower_CI        <span class="st">&quot;0.5427753&quot;</span> 
+<span class="op">&gt;</span><span class="st"> </span>azithromycin_predicted_severe_exac_rate_upper_CI        <span class="st">&quot;0.5944646&quot;</span></code></pre>
+<p>The <strong>predictACCEPT()</strong> function returns a data frame with the original patient data, along with the predictions for different treatment options. Here is a summary of the results:</p>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
+<div class="row">
+<div class="col-3">
+    <div class="list-group predict-output" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-az-list"
+      data-toggle="list" href="#list-az" role="tab" aria-controls="az">Azithromycin</a>
+      <a class="list-group-item list-group-item-action" id="list-no-treatment-list"
+      data-toggle="list" href="#list-no-treatment" role="tab" aria-controls="no-treatment">No Treatment</a>
+    </div>
+  </div>
+  <div class="col-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-overall-list"
+        data-toggle="list" href="#list-overall" role="tab" aria-controls="overall">Overall</a>
+        <a class="list-group-item list-group-item-action" id="list-severe-list"
+        data-toggle="list" href="#list-severe" role="tab" aria-controls="severe">Severe</a>
+      </div>
+    </div>
+<div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-probability-list"
+      data-toggle="list" href="#list-probability" role="tab" aria-controls="probability">Probability</a>
+      <a class="list-group-item list-group-item-action" id="list-rate-list"
+      data-toggle="list" href="#list-rate" role="tab" aria-controls="rate">Rate</a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-ci-list"
+      data-toggle="list" href="#list-ci" role="tab" aria-controls="ci">Confidence Interval</a>
+      <a class="list-group-item list-group-item-action" id="list-pi-list"
+      data-toggle="list" href="#list-pi" role="tab" aria-controls="pi">Prediction Interval</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-az" role="tabpanel"
+      aria-labelledby="list-az-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      azithromycin_predicted_</h6>
+      <p class="card-text">Prediction if the patient is treated with 250 mg / day of azithromycin</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-no-treatment" role="tabpanel"
+      aria-labelledby="list-no-treatment-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      predicted_</h6>
+      <p class="card-text">Prediction if patient is not treated with azithromycin</p>
+  </div></div>
+    </div>
+    </div>
+    </div>
+      <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-overall" role="tabpanel"
+      aria-labelledby="list-overall-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      exac_</h6>
+      <p class="card-text">All exacerbations (mild, moderate, severe)</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-severe" role="tabpanel"
+      aria-labelledby="list-severe-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      severe_exac_</h6>
+      <p class="card-text">Severe exacerbations only</p>
+  </div></div>
+
+    </div>
+    </div>
+    </div>
+    <div class="col-3">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-probability" role="tabpanel"
+    aria-labelledby="list-probability-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">
+    probability</h6>
+    <p class="card-text">Probability of at least one exacerbation next year</p>
+</div></div>
+  </div>
+    <div class="tab-pane fade" id="list-rate" role="tabpanel"
+    aria-labelledby="list-rate-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        rate</h6>
+        <p class="card-text">Number of exacerbations / year</p>
+    </div></div>
+
+  </div>
+  </div>
+  </div>
+          <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-ci" role="tabpanel"
+      aria-labelledby="list-ci-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_upper_CI <br>
+            _lower_CI</h6>
+            <p class="card-text">95 % confidence interval</p>
+    </div></div>
+  </div>
+      <div class="tab-pane fade" id="list-pi" role="tabpanel"
+      aria-labelledby="list-pi-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_upper_PI <br>
+            _lower_PI</h6>
+            <a href="https://en.wikipedia.org/wiki/Prediction_interval">Prediction Interval</a>
+    </div></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+<p>To visualize the data, there is a graphing function called <strong>plotExacerbations()</strong>, which creates a Plotly bar graph. You have the option of selecting <strong>probability</strong> or <strong>rate</strong> for which prediction you want to see, and either <strong>CI</strong> or <strong>PI</strong> to select the confidence interval or prediction interval respectively.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotExacerbations</span>(results, <span class="dt">type=</span><span class="st">&quot;probability&quot;</span>, <span class="dt">interval =</span> <span class="st">&quot;CI&quot;</span>)</code></pre>
+<div id="htmlwidget-f3192d71b28d12f5b398" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f3192d71b28d12f5b398">{"x":{"visdat":{"15491c6bed7e":["function () ","plotlyVisDat"]},"cur_data":"15491c6bed7e","attrs":{"15491c6bed7e":{"x":{},"y":{},"marker":{"color":"#007bff"},"error_y":{"type":"data","symmetric":false,"color":"#85144B","thickness":1.5,"width":3,"array":[0.00918280409730654,0.0144113662579138],"arrayminus":[0.00862589408309677,0.0140316068204958]},"name":"No Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"15491c6bed7e.1":{"x":{},"y":{},"marker":{"color":"rgb(204,204,204)"},"error_y":{"type":"data","symmetric":false,"color":"#85144B","thickness":1.5,"width":3,"array":[0.00904069818383457,0.0147923321286325],"arrayminus":[0.0100210926475691,0.0134646382186355]},"name":"Azithromycin Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":100,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Exacerbation Type","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["Overall","Severe"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Probability of an Exacerbation in Next Year"},"barmode":"group","hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Overall","Severe"],"y":[0.780751468240791,0.436459520979438],"marker":{"color":"#007bff","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"#85144B","type":"data","symmetric":false,"thickness":1.5,"width":3,"array":[0.00918280409730654,0.0144113662579138],"arrayminus":[0.00862589408309677,0.0140316068204958]},"name":"No Treatment","type":"bar","error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Overall","Severe"],"y":[0.703706862677026,0.422770542450052],"marker":{"color":"rgb(204,204,204)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"#85144B","type":"data","symmetric":false,"thickness":1.5,"width":3,"array":[0.00904069818383457,0.0147923321286325],"arrayminus":[0.0100210926475691,0.0134646382186355]},"name":"Azithromycin Treatment","type":"bar","error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotExacerbations</span>(results, <span class="dt">type=</span><span class="st">&quot;probability&quot;</span>, <span class="dt">interval =</span> <span class="st">&quot;PI&quot;</span>)</code></pre>
+<div id="htmlwidget-50e2e2375594fa6d8c13" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-50e2e2375594fa6d8c13">{"x":{"visdat":{"1549587b9dba":["function () ","plotlyVisDat"]},"cur_data":"1549587b9dba","attrs":{"1549587b9dba":{"x":{},"y":{},"marker":{"color":"#007bff"},"error_y":{"type":"data","symmetric":false,"color":"#85144B","thickness":1.5,"width":3,"array":[0.200411414329015,0.474055898005266],"arrayminus":[0.336456795150659,0.369517859901339]},"name":"No Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1549587b9dba.1":{"x":{},"y":{},"marker":{"color":"rgb(204,204,204)"},"error_y":{"type":"data","symmetric":false,"color":"#85144B","thickness":1.5,"width":3,"array":[0.250357877353323,0.481653222372152],"arrayminus":[0.337734348481582,0.36022168679642]},"name":"Azithromycin Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":100,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Exacerbation Type","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["Overall","Severe"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Probability of an Exacerbation in Next Year"},"barmode":"group","hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Overall","Severe"],"y":[0.780751468240791,0.436459520979438],"marker":{"color":"#007bff","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"#85144B","type":"data","symmetric":false,"thickness":1.5,"width":3,"array":[0.200411414329015,0.474055898005266],"arrayminus":[0.336456795150659,0.369517859901339]},"name":"No Treatment","type":"bar","error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Overall","Severe"],"y":[0.703706862677026,0.422770542450052],"marker":{"color":"rgb(204,204,204)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"#85144B","type":"data","symmetric":false,"thickness":1.5,"width":3,"array":[0.250357877353323,0.481653222372152],"arrayminus":[0.337734348481582,0.36022168679642]},"name":"Azithromycin Treatment","type":"bar","error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotExacerbations</span>(results, <span class="dt">type=</span><span class="st">&quot;rate&quot;</span>, <span class="dt">interval =</span> <span class="st">&quot;CI&quot;</span>)</code></pre>
+<div id="htmlwidget-4d5550872cae203c13d5" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4d5550872cae203c13d5">{"x":{"visdat":{"154950284af9":["function () ","plotlyVisDat"]},"cur_data":"154950284af9","attrs":{"154950284af9":{"x":{},"y":{},"marker":{"color":"#007bff"},"error_y":{"type":"data","symmetric":false,"color":"#85144B","thickness":1.5,"width":3,"array":[0.0486679918303019,0.0323004834638003],"arrayminus":[0.0577213446378961,0.0345243325853366]},"name":"No Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"154950284af9.1":{"x":{},"y":{},"marker":{"color":"rgb(204,204,204)"},"error_y":{"type":"data","symmetric":false,"color":"#85144B","thickness":1.5,"width":3,"array":[0.0400641780551572,0.0260325177775191],"arrayminus":[0.040323637125284,0.0256567897919544]},"name":"Azithromycin Treatment","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":100,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Exacerbation Type","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["Overall","Severe"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Predicted Exacerbation Rate in Next Year"},"barmode":"group","hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Overall","Severe"],"y":[1.79827641896433,0.757359353673915],"marker":{"color":"#007bff","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"#85144B","type":"data","symmetric":false,"thickness":1.5,"width":3,"array":[0.0486679918303019,0.0323004834638003],"arrayminus":[0.0577213446378961,0.0345243325853366]},"name":"No Treatment","type":"bar","error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Overall","Severe"],"y":[1.39469589926869,0.568432119004495],"marker":{"color":"rgb(204,204,204)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"#85144B","type":"data","symmetric":false,"thickness":1.5,"width":3,"array":[0.0400641780551572,0.0260325177775191],"arrayminus":[0.040323637125284,0.0256567897919544]},"name":"Azithromycin Treatment","type":"bar","error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="section-probability-of-n-exacerbations-poisson" class="section level3 unnumbered">
 <h3>Probability of N Exacerbations (Poisson)</h3>
@@ -393,36 +542,36 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <pre class="sourceCode r"><code class="sourceCode r">patientResults =<span class="st"> </span><span class="kw">predictACCEPT</span>(samplePatients[<span class="dv">1</span>,])
 exacerbationsMatrix =<span class="st"> </span><span class="kw">predictCountProb</span>(patientResults, <span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">shortened =</span> <span class="ot">TRUE</span>)
 <span class="kw">print</span>(exacerbationsMatrix)
-<span class="op">&gt;</span><span class="st">                         </span>none severe   <span class="dv">1</span> severe   <span class="dv">2</span> severe <span class="dv">3</span> or more severe
-<span class="op">&gt;</span><span class="st"> </span>no exacerbations         <span class="fl">0.16567359</span> <span class="fl">0.00000000</span> <span class="fl">0.00000000</span>       <span class="fl">0.00000000</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> exacerbation           <span class="fl">0.16322231</span> <span class="fl">0.13461502</span> <span class="fl">0.00000000</span>       <span class="fl">0.00000000</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> exacerbations          <span class="fl">0.08040365</span> <span class="fl">0.13262328</span> <span class="fl">0.05468948</span>       <span class="fl">0.00000000</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> or more exacerbations  <span class="fl">0.03443370</span> <span class="fl">0.09330865</span> <span class="fl">0.09178721</span>       <span class="fl">0.03966967</span></code></pre>
+<span class="op">&gt;</span><span class="st">                         </span>none severe  <span class="dv">1</span> severe   <span class="dv">2</span> severe <span class="dv">3</span> or more severe
+<span class="op">&gt;</span><span class="st"> </span>no exacerbations         <span class="fl">0.15396654</span> <span class="fl">0.0000000</span> <span class="fl">0.00000000</span>       <span class="fl">0.00000000</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> exacerbation           <span class="fl">0.15748390</span> <span class="fl">0.1305906</span> <span class="fl">0.00000000</span>       <span class="fl">0.00000000</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> exacerbations          <span class="fl">0.08054080</span> <span class="fl">0.1335739</span> <span class="fl">0.05538183</span>       <span class="fl">0.00000000</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> or more exacerbations  <span class="fl">0.03620437</span> <span class="fl">0.0990199</span> <span class="fl">0.09863848</span>       <span class="fl">0.04354176</span></code></pre>
 <p>The shortened parameter groups the probabilities from 3-10 exacerbations into one category, “3 or more exacerbations.” To see all n exacerbation probabilities:</p>
 <pre class="sourceCode r"><code class="sourceCode r">exacerbationsMatrix =<span class="st"> </span><span class="kw">predictCountProb</span>(patientResults, <span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">shortened =</span> <span class="ot">FALSE</span>)
 <span class="kw">print</span>(exacerbationsMatrix)
 <span class="op">&gt;</span><span class="st">                       </span><span class="dv">0</span> severe     <span class="dv">1</span> severe     <span class="dv">2</span> severe     <span class="dv">3</span> severe
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.656736e-01</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.632223e-01</span> <span class="fl">1.346150e-01</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> <span class="kw">exacerbation</span>(s) <span class="fl">8.040365e-02</span> <span class="fl">1.326233e-01</span> <span class="fl">5.468948e-02</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> <span class="kw">exacerbation</span>(s) <span class="fl">2.640467e-02</span> <span class="fl">6.533051e-02</span> <span class="fl">5.388030e-02</span> <span class="fl">1.481231e-02</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span> <span class="kw">exacerbation</span>(s) <span class="fl">6.503498e-03</span> <span class="fl">2.145463e-02</span> <span class="fl">2.654155e-02</span> <span class="fl">1.459315e-02</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.281455e-03</span> <span class="fl">5.284297e-03</span> <span class="fl">8.716282e-03</span> <span class="fl">7.188616e-03</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="kw">exacerbation</span>(s) <span class="fl">2.104157e-04</span> <span class="fl">1.041222e-03</span> <span class="fl">2.146829e-03</span> <span class="fl">2.360752e-03</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span> <span class="kw">exacerbation</span>(s) <span class="fl">2.961464e-05</span> <span class="fl">1.709694e-04</span> <span class="fl">4.230130e-04</span> <span class="fl">5.814556e-04</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span> <span class="kw">exacerbation</span>(s) <span class="fl">3.647058e-06</span> <span class="fl">2.406283e-05</span> <span class="fl">6.945904e-05</span> <span class="fl">1.145705e-04</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span> <span class="kw">exacerbation</span>(s) <span class="fl">3.992330e-07</span> <span class="fl">2.963350e-06</span> <span class="fl">9.775905e-06</span> <span class="fl">1.881255e-05</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.539665e-01</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.574839e-01</span> <span class="fl">1.305906e-01</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> <span class="kw">exacerbation</span>(s) <span class="fl">8.054080e-02</span> <span class="fl">1.335739e-01</span> <span class="fl">5.538183e-02</span> <span class="fl">0.000000e+00</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> <span class="kw">exacerbation</span>(s) <span class="fl">2.746025e-02</span> <span class="fl">6.831270e-02</span> <span class="fl">5.664703e-02</span> <span class="fl">1.565783e-02</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span> <span class="kw">exacerbation</span>(s) <span class="fl">7.021895e-03</span> <span class="fl">2.329110e-02</span> <span class="fl">2.897056e-02</span> <span class="fl">1.601553e-02</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.436462e-03</span> <span class="fl">5.955796e-03</span> <span class="fl">9.877465e-03</span> <span class="fl">8.190703e-03</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="kw">exacerbation</span>(s) <span class="fl">2.448797e-04</span> <span class="fl">1.218371e-03</span> <span class="fl">2.525779e-03</span> <span class="fl">2.792606e-03</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span> <span class="kw">exacerbation</span>(s) <span class="fl">3.578199e-05</span> <span class="fl">2.077008e-04</span> <span class="fl">5.166960e-04</span> <span class="fl">7.141008e-04</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span> <span class="kw">exacerbation</span>(s) <span class="fl">4.574928e-06</span> <span class="fl">3.034939e-05</span> <span class="fl">8.808332e-05</span> <span class="fl">1.460829e-04</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span> <span class="kw">exacerbation</span>(s) <span class="fl">5.199380e-07</span> <span class="fl">3.880340e-06</span> <span class="fl">1.287080e-05</span> <span class="fl">2.490336e-05</span>
 <span class="op">&gt;</span><span class="st">                       </span><span class="dv">4</span> severe     <span class="dv">5</span> severe     <span class="dv">6</span> severe     <span class="dv">7</span> severe
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span> <span class="kw">exacerbation</span>(s) <span class="fl">3.008868e-03</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span> <span class="kw">exacerbation</span>(s) <span class="fl">2.964349e-03</span> <span class="fl">4.889600e-04</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.460244e-03</span> <span class="fl">4.817254e-04</span> <span class="fl">6.621591e-05</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span> <span class="kw">exacerbation</span>(s) <span class="fl">4.795463e-04</span> <span class="fl">2.372990e-04</span> <span class="fl">6.523619e-05</span> <span class="fl">7.686074e-06</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.181128e-04</span> <span class="fl">7.792931e-05</span> <span class="fl">3.213548e-05</span> <span class="fl">7.572352e-06</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span> <span class="kw">exacerbation</span>(s) <span class="fl">2.327304e-05</span> <span class="fl">1.919407e-05</span> <span class="fl">1.055334e-05</span> <span class="fl">3.730157e-06</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span> <span class="kw">exacerbation</span>(s) <span class="fl">3.320145e-03</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span> <span class="kw">exacerbation</span>(s) <span class="fl">3.395993e-03</span> <span class="fl">5.632128e-04</span> <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.736787e-03</span> <span class="fl">5.760794e-04</span> <span class="fl">7.961717e-05</span> <span class="fl">0.000000e+00</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span> <span class="kw">exacerbation</span>(s) <span class="fl">5.921547e-04</span> <span class="fl">2.946199e-04</span> <span class="fl">8.143602e-05</span> <span class="fl">9.647042e-06</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.514206e-04</span> <span class="fl">1.004502e-04</span> <span class="fl">4.164821e-05</span> <span class="fl">9.867429e-06</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span> <span class="kw">exacerbation</span>(s) <span class="fl">3.097596e-05</span> <span class="fl">2.568624e-05</span> <span class="fl">1.419989e-05</span> <span class="fl">5.046425e-06</span>
 <span class="op">&gt;</span><span class="st">                       </span><span class="dv">8</span> severe     <span class="dv">9</span> severe
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
@@ -432,12 +581,12 @@ exacerbationsMatrix =<span class="st"> </span><span class="kw">predictCountProb<
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span> <span class="kw">exacerbation</span>(s) <span class="fl">0.000000e+00</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span> <span class="kw">exacerbation</span>(s) <span class="fl">7.806473e-07</span> <span class="fl">0.000000e+00</span>
-<span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span> <span class="kw">exacerbation</span>(s) <span class="fl">7.690969e-07</span> <span class="fl">7.047784e-08</span></code></pre>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.022798e-06</span> <span class="fl">0.000000e+00</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span> <span class="kw">exacerbation</span>(s) <span class="fl">1.046163e-06</span> <span class="fl">9.639015e-08</span></code></pre>
 <p>To visualize the matrix as a heatmap, we can use the function <strong>plotHeatMap</strong>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotHeatMap</span>(patientResults, <span class="dt">shortened =</span> <span class="ot">FALSE</span>)</code></pre>
-<div id="htmlwidget-d20ada69b7ac29c2ca36" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d20ada69b7ac29c2ca36">{"x":{"visdat":{"6cb8115bb3e5":["function () ","plotlyVisDat"]},"cur_data":"6cb8115bb3e5","attrs":{"6cb8115bb3e5":{"x":["0 exacerbation(s)","1 exacerbation(s)","2 exacerbation(s)","3 exacerbation(s)","4 exacerbation(s)","5 exacerbation(s)","6 exacerbation(s)","7 exacerbation(s)","8 exacerbation(s)","9 exacerbation(s)"],"y":["0 severe","1 severe","2 severe","3 severe","4 severe","5 severe","6 severe","7 severe","8 severe","9 severe"],"z":[[0.165673586320446,0.163222308104903,0.0804036492925371,0.0264046701892505,0.00650349779460639,0.0012814546293911,0.00021041574076104,2.96146378907729e-05,3.64705809294896e-06,3.99232982386089e-07],[0,0.13461502481235,0.132623283792336,0.0653305061169104,0.0214546290186103,0.00528429749383629,0.00104122238530968,0.000170969439320701,2.40628292235089e-05,2.96334996168196e-06],[0,0,0.0546894810080937,0.0538803047453479,0.0265415504585052,0.00871628206349621,0.00214682935900454,0.000423013047362091,6.94590363722617e-05,9.77590461135035e-06],[0,0,0,0.0148123105728301,0.0145931501439685,0.00718861618777547,0.00236075154828745,0.000581455567437894,0.000114570489944114,1.88125540756765e-05],[0,0,0,0,0.0030088676167018,0.0029643489230097,0.00146024446017022,0.000479546310468941,0.000118112756197805,2.32730359877026e-05],[0,0,0,0,0,0.000488960006088072,0.000481725436970476,0.000237298954653765,7.79293065553452e-05,1.91940694462535e-05],[0,0,0,0,0,0,6.62159096627518e-05,6.52361903213435e-05,3.21354833703699e-05,1.05533374073547e-05],[0,0,0,0,0,0,0,7.68607418288399e-06,7.57235233605257e-06,3.73015654916599e-06],[0,0,0,0,0,0,0,0,7.80647272913235e-07,7.69096948588066e-07],[0,0,0,0,0,0,0,0,0,7.04778423021448e-08]],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"heatmap"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Predicted Probability of Experiencing Certain Number of Exacerbations","yaxis":{"domain":[0,1],"automargin":true,"title":"Number of Severe Exacerbations"},"xaxis":{"domain":[0,1],"automargin":true,"title":"Number of All Exacerbations"},"scene":{"zaxis":{"title":[]}},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"colorbar":{"title":"","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"x":["0 exacerbation(s)","1 exacerbation(s)","2 exacerbation(s)","3 exacerbation(s)","4 exacerbation(s)","5 exacerbation(s)","6 exacerbation(s)","7 exacerbation(s)","8 exacerbation(s)","9 exacerbation(s)"],"y":["0 severe","1 severe","2 severe","3 severe","4 severe","5 severe","6 severe","7 severe","8 severe","9 severe"],"z":[[0.165673586320446,0.163222308104903,0.0804036492925371,0.0264046701892505,0.00650349779460639,0.0012814546293911,0.00021041574076104,2.96146378907729e-05,3.64705809294896e-06,3.99232982386089e-07],[0,0.13461502481235,0.132623283792336,0.0653305061169104,0.0214546290186103,0.00528429749383629,0.00104122238530968,0.000170969439320701,2.40628292235089e-05,2.96334996168196e-06],[0,0,0.0546894810080937,0.0538803047453479,0.0265415504585052,0.00871628206349621,0.00214682935900454,0.000423013047362091,6.94590363722617e-05,9.77590461135035e-06],[0,0,0,0.0148123105728301,0.0145931501439685,0.00718861618777547,0.00236075154828745,0.000581455567437894,0.000114570489944114,1.88125540756765e-05],[0,0,0,0,0.0030088676167018,0.0029643489230097,0.00146024446017022,0.000479546310468941,0.000118112756197805,2.32730359877026e-05],[0,0,0,0,0,0.000488960006088072,0.000481725436970476,0.000237298954653765,7.79293065553452e-05,1.91940694462535e-05],[0,0,0,0,0,0,6.62159096627518e-05,6.52361903213435e-05,3.21354833703699e-05,1.05533374073547e-05],[0,0,0,0,0,0,0,7.68607418288399e-06,7.57235233605257e-06,3.73015654916599e-06],[0,0,0,0,0,0,0,0,7.80647272913235e-07,7.69096948588066e-07],[0,0,0,0,0,0,0,0,0,7.04778423021448e-08]],"type":"heatmap","xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-926eb407632d188e07f3" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-926eb407632d188e07f3">{"x":{"visdat":{"15491642f6c0":["function () ","plotlyVisDat"]},"cur_data":"15491642f6c0","attrs":{"15491642f6c0":{"x":["0 exacerbation(s)","1 exacerbation(s)","2 exacerbation(s)","3 exacerbation(s)","4 exacerbation(s)","5 exacerbation(s)","6 exacerbation(s)","7 exacerbation(s)","8 exacerbation(s)","9 exacerbation(s)"],"y":["0 severe","1 severe","2 severe","3 severe","4 severe","5 severe","6 severe","7 severe","8 severe","9 severe"],"z":[[0.153966538008753,0.157483896928789,0.0805408048808224,0.0274602520314989,0.00702189507619065,0.00143646199326858,0.000244879650924725,3.57819879983038e-05,4.57492824635026e-06,5.1993803164618e-07],[0,0.130590572835551,0.133573908839441,0.068312699512832,0.0232911000622628,0.00595579605965254,0.00121837119275084,0.000207700805016553,3.03493887069649e-05,3.88033989787093e-06],[0,0,0.0553818314488176,0.0566470269995765,0.0289705629440615,0.00987746473499367,0.00252577874770922,0.000516696010852112,8.80833181557113e-05,1.28707968228332e-05],[0,0,0,0.0156578288311189,0.0160155312554236,0.00819070268809166,0.0027926063125752,0.000714100820834323,0.00014608288465724,2.49033569760821e-05],[0,0,0,0,0.00332014485559938,0.00339599342162344,0.00173678737243344,0.000592154735015604,0.000151420621099161,3.09759637314412e-05],[0,0,0,0,0,0.000563212791814651,0.000576079363751566,0.000294619935984714,0.000100450171904983,2.5686237937402e-05],[0,0,0,0,0,0,7.96171710020135e-05,8.14360218395637e-05,4.16482121230243e-05,1.4199887910878e-05],[0,0,0,0,0,0,0,9.64704233155972e-06,9.86742859753491e-06,5.04642478912538e-06],[0,0,0,0,0,0,0,0,1.02279755112729e-06,1.04616331706823e-06],[0,0,0,0,0,0,0,0,0,9.63901491727732e-08]],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"heatmap"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Predicted Probability of Experiencing Certain Number of Exacerbations","yaxis":{"domain":[0,1],"automargin":true,"title":"Number of Severe Exacerbations"},"xaxis":{"domain":[0,1],"automargin":true,"title":"Number of All Exacerbations"},"scene":{"zaxis":{"title":[]}},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"colorbar":{"title":"","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"x":["0 exacerbation(s)","1 exacerbation(s)","2 exacerbation(s)","3 exacerbation(s)","4 exacerbation(s)","5 exacerbation(s)","6 exacerbation(s)","7 exacerbation(s)","8 exacerbation(s)","9 exacerbation(s)"],"y":["0 severe","1 severe","2 severe","3 severe","4 severe","5 severe","6 severe","7 severe","8 severe","9 severe"],"z":[[0.153966538008753,0.157483896928789,0.0805408048808224,0.0274602520314989,0.00702189507619065,0.00143646199326858,0.000244879650924725,3.57819879983038e-05,4.57492824635026e-06,5.1993803164618e-07],[0,0.130590572835551,0.133573908839441,0.068312699512832,0.0232911000622628,0.00595579605965254,0.00121837119275084,0.000207700805016553,3.03493887069649e-05,3.88033989787093e-06],[0,0,0.0553818314488176,0.0566470269995765,0.0289705629440615,0.00987746473499367,0.00252577874770922,0.000516696010852112,8.80833181557113e-05,1.28707968228332e-05],[0,0,0,0.0156578288311189,0.0160155312554236,0.00819070268809166,0.0027926063125752,0.000714100820834323,0.00014608288465724,2.49033569760821e-05],[0,0,0,0,0.00332014485559938,0.00339599342162344,0.00173678737243344,0.000592154735015604,0.000151420621099161,3.09759637314412e-05],[0,0,0,0,0,0.000563212791814651,0.000576079363751566,0.000294619935984714,0.000100450171904983,2.5686237937402e-05],[0,0,0,0,0,0,7.96171710020135e-05,8.14360218395637e-05,4.16482121230243e-05,1.4199887910878e-05],[0,0,0,0,0,0,0,9.64704233155972e-06,9.86742859753491e-06,5.04642478912538e-06],[0,0,0,0,0,0,0,0,1.02279755112729e-06,1.04616331706823e-06],[0,0,0,0,0,0,0,0,0,9.63901491727732e-08]],"type":"heatmap","xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 
 </div>
 </div>
