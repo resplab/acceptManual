@@ -333,10 +333,20 @@ code span.co {
     background-color: white;
     color: var(--color-a);
     font-weight: bold;
+    font-size: 1.2em;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card.card-icon .card-subtitle {
+    font-size: 1.0em;
 }
 .fa, .far, .fas {
     color: var(--color-a);
 }
+
+.card.card-icon .mb-2 {
+    margin-bottom: 1.2rem!important;
+}
+
 
 /* Web App Card */
 
@@ -393,4 +403,3 @@ code span.er {
 code span.dt {
     color: var(--color-d);
 }
-
