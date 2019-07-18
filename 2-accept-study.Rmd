@@ -229,6 +229,18 @@ HTML(rawHTML)
 
 ## Validation
 
+We generated our regression model based on the OPTIMAL, STATCOPE, and MACRO studies. To test how well this model performed with new data, we used a fourth study, ECLIPSE. 
+
+Details of the study can be found here: [Evaluation of COPD Longitudinally to Identify Predictive Surrogate Endpoints](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2944278/).
+
+#### Criteria {-}
+
+- Age: 40 - 75 years old
+- COPD diagnosis
+- Does not have asthma
+- 10 pack years or more of smoking
+- at least 1 COPD exacerbation in the last year
+
 
 
 

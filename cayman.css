@@ -403,3 +403,15 @@ code span.er {
 code span.dt {
     color: var(--color-d);
 }
+
+/* Icons */
+
+
+.fa, .far, .fas, .icon {
+    color: var(--color-a);
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+}
