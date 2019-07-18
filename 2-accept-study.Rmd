@@ -34,11 +34,17 @@ HTML(rawHTML)
 
 The data for this study was taken from three different studies: 
 
-[Macrolide Azithromycin to Prevent Rapid Worsening of Symptoms in COPD (MACRO)](https://clinicaltrials.gov/ct2/show/NCT00325897)
+[MACRO Clinical Trial](https://clinicaltrials.gov/ct2/show/NCT00325897)
 
-[Simvastatin for the Prevention of Exacerbations in Moderate-to-Severe COPD ( STATCOPE)](https://clinicaltrials.gov/ct2/show/NCT01061671)
+[MACRO Paper](https://www.ncbi.nlm.nih.gov/pubmed/21864166)
 
-[Optimal Therapy of COPD to Prevent Exacerbations and Improve Quality of Life (OPTIMAL)](https://www.ncbi.nlm.nih.gov/pubmed/15611808)
+[STATCOPE Clinical Trial](https://clinicaltrials.gov/ct2/show/NCT01061671)
+
+[STATCOPE Paper](https://www.ncbi.nlm.nih.gov/pubmed/24836125?dopt=Abstract)
+
+[OPTIMAL Clinical Trial](https://www.ncbi.nlm.nih.gov/pubmed/15611808)
+
+[OPTIMAL Paper](https://annals.org/aim/fullarticle/734106)
 
 ### Clinical Trial 1: MACRO {-}
 
@@ -220,6 +226,9 @@ library(htmltools)
 rawHTML <- paste(readLines("secondary-metrics.html"), collapse="\n")
 HTML(rawHTML)
 ```
+
+## Validation
+
 
 
 
