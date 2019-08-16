@@ -1,0 +1,45 @@
+<code-chunk>
+  <div slot="code">
+    <div class="code-chunk">
+
+    <code class="code mac">
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
+"model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json </code>
+      <code class="code linux">
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
+"model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json
+
+}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json
+      </code>
+        <code class="code windows">
+          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
+        </code>
+    <code class="code js">
+      let postData = JSON.stringify({
+	"api_key": "YOUR_API_KEY",
+	"func": ["prism_model_run"],
+	"model_input": [{}]
+});
+request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json');
+request.setRequestHeader('Content-Type', 'application/json');
+request.send(postData);
+let results = request.response;
+    </code>
+    <code class="code r active">library(prism)
+      connect_to_model('acceptPrism', api_key = YOUR_API_KEY)
+      results = model_run()
+    </code>
+    <code class="code python">
+      api_key = 'YOUR_API_KEY'
+modelInput = [{}]
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",
+      json = {"api_key":[api_key],
+        "func": ["prism_model_run"],
+        "model_input": modelInput})
+      print(response)
+  results = json.loads(response.text)
+  print(results)
+    </code>
+</div>
+</div>
+</code-chunk>

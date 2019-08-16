@@ -1,0 +1,187 @@
+<code-chunk>
+  <div slot="code">
+    <div class="code-chunk">
+
+    <code class="code mac">
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
+"model_input":[{
+  "patient_data": [{
+			"ID": "10001",
+			"male": 1,
+			"age": 70,
+			"smoker": 1,
+			"oxygen": 1,
+			"statin": 1,
+			"LAMA": 1,
+			"LABA": 1,
+			"ICS": 1,
+			"FEV1": 33,
+			"BMI": 25,
+			"SGRQ": 50,
+			"LastYrExacCount": 2,
+			"LastYrSevExacCount": 1,
+			"randomized_azithromycin": 0,
+			"randomized_statin": 0,
+			"randomized_LAMA": 0,
+			"randomized_LABA": 0,
+			"randomized_ICS": 0
+		}],
+		"random_sampling_N": 1000,
+		"calculate_CIs": True,
+		"random_distribution_iteration": 20000}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json </code>
+      <code class="code linux">
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
+"model_input":[{		"patient_data": [{
+			"ID": "10001",
+			"male": 1,
+			"age": 70,
+			"smoker": 1,
+			"oxygen": 1,
+			"statin": 1,
+			"LAMA": 1,
+			"LABA": 1,
+			"ICS": 1,
+			"FEV1": 33,
+			"BMI": 25,
+			"SGRQ": 50,
+			"LastYrExacCount": 2,
+			"LastYrSevExacCount": 1,
+			"randomized_azithromycin": 0,
+			"randomized_statin": 0,
+			"randomized_LAMA": 0,
+			"randomized_LABA": 0,
+			"randomized_ICS": 0
+		}],
+		"random_sampling_N": 1000,
+		"calculate_CIs": True,
+		"random_distribution_iteration": 20000}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json
+
+}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json
+      </code>
+        <code class="code windows">
+          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{
+            "patient_data": [{
+              "ID": "10001",
+              "male": 1,
+              "age": 70,
+              "smoker": 1,
+              "oxygen": 1,
+              "statin": 1,
+              "LAMA": 1,
+              "LABA": 1,
+              "ICS": 1,
+              "FEV1": 33,
+              "BMI": 25,
+              "SGRQ": 50,
+              "LastYrExacCount": 2,
+              "LastYrSevExacCount": 1,
+              "randomized_azithromycin": 0,
+              "randomized_statin": 0,
+              "randomized_LAMA": 0,
+              "randomized_LABA": 0,
+              "randomized_ICS": 0
+            }],
+            "random_sampling_N": 1000,
+            "calculate_CIs": True,
+            "random_distribution_iteration": 20000
+          }]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
+        </code>
+    <code class="code js">
+      let postData = JSON.stringify({
+	"api_key": "YOUR_API_KEY",
+	"func": ["prism_model_run"],
+	"model_input": [{
+		"patient_data": [{
+			"ID": "10001",
+			"male": 1,
+			"age": 70,
+			"smoker": 1,
+			"oxygen": 1,
+			"statin": 1,
+			"LAMA": 1,
+			"LABA": 1,
+			"ICS": 1,
+			"FEV1": 33,
+			"BMI": 25,
+			"SGRQ": 50,
+			"LastYrExacCount": 2,
+			"LastYrSevExacCount": 1,
+			"randomized_azithromycin": 0,
+			"randomized_statin": 0,
+			"randomized_LAMA": 0,
+			"randomized_LABA": 0,
+			"randomized_ICS": 0
+		}],
+		"random_sampling_N": 1000,
+		"calculate_CIs": True,
+		"random_distribution_iteration": 20000
+	}]
+});
+request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json');
+request.setRequestHeader('Content-Type', 'application/json');
+request.send(postData);
+let results = request.response;
+    </code>
+    <code class="code r active">library(prism)
+      connect_to_model('acceptPrism', api_key = YOUR_API_KEY)
+      model_input = list(patient_data = samplePatients)
+      model_input$random_sampling_N = 1000
+      model_input$random_distribution_iteration = 20000
+      model_input$calculate_CIs = TRUE
+      model_run(model_input)
+      results = model_run(model_input)
+    </code>
+    <code class="code python">
+      api_key = 'YOUR_API_KEY'
+modelInput = [{
+  "patient_data": [{
+    "ID": "10001",
+    "male": 1,
+    "age": 70,
+    "smoker": 1,
+    "oxygen": 1,
+    "statin": 1,
+    "LAMA": 1,
+    "LABA": 1,
+    "ICS": 1,
+    "FEV1": 33,
+    "BMI": 25,
+    "SGRQ": 50,
+    "LastYrExacCount": 2,
+    "LastYrSevExacCount": 1,
+    "randomized_azithromycin": 0,
+    "randomized_statin": 0,
+    "randomized_LAMA": 0,
+    "randomized_LABA": 0,
+    "randomized_ICS": 0
+  }],
+  "random_sampling_N": 1000,
+  "calculate_CIs": True,
+  "random_distribution_iteration": 20000
+}]
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",
+      json = {"api_key":[api_key],
+        "func": ["prism_model_run"],
+        "model_input": modelInput})
+      print(response)
+  results = json.loads(response.text)
+  print(results)
+    </code>
+</div>
+</div>
+</code-chunk>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+
+  <script src="js/highlight.js"></script>
+  <script>
+    /*
+Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+*/
+hljs.configure({useBR: true});
+$("code-chunk code").each(function (i, e) {
+    hljs.highlightBlock(e);
+});
+/*hljs.initHighlightingOnLoad();*/
+  </script>

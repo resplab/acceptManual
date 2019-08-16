@@ -137,28 +137,7 @@ a:hover {
 .main-content blockquote>:last-child {
   margin-bottom: 0;
 }
-.main-content table {
-  width: 100%;
-  overflow: auto;
-  word-break: normal;
-  word-break: keep-all;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 1rem 0;
-}
-.main-content table th {
-  font-weight: bold;
-  background-color: #4CAF50;
-  color: white;
-}
-.main-content table th, .main-content table td {
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #e9ebec;
-  text-align: left;
-}
-.main-content table tr:nth-child(odd) {
-  background-color: #f2f2f2;
-}
+
 .main-content dl {
   padding: 0;
 }
@@ -239,6 +218,9 @@ a:hover {
   --color-b: #8cf2f2; /* cyan */
   --color-c: #c51672; /* magenta */
   --color-d: #007bff; /* primary blue */
+  --code-grey: 	#e4e4e4; /* grey */
+  --border-grey: rgba(0, 0, 0, 0.125); /* grey for borders */
+  --math-grey: #383838; /* dark grey */
 }
 
 
@@ -317,7 +299,6 @@ code span.co {
   color: #fff !important;
 }
 
-
 /* Cards with Icons */
 
 .book .book-body .page-wrapper .page-inner section.normal .card.card-icon {
@@ -333,20 +314,11 @@ code span.co {
     background-color: white;
     color: var(--color-a);
     font-weight: bold;
-    font-size: 1.2em;
-}
-
-.book .book-body .page-wrapper .page-inner section.normal .card.card-icon .card-subtitle {
-    font-size: 1.0em;
+    font-size: 1.5em;
 }
 .fa, .far, .fas {
     color: var(--color-a);
 }
-
-.card.card-icon .mb-2 {
-    margin-bottom: 1.2rem!important;
-}
-
 
 /* Web App Card */
 
@@ -386,10 +358,14 @@ code span.co {
     color: #9ddcff;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .card .basic h5,
-.book .book-body .page-wrapper .page-inner section.normal .card .basic h6 {
+.book .book-body .page-wrapper .page-inner section.normal .card h5,
+.book .book-body .page-wrapper .page-inner section.normal .card h6 {
     margin-top: .8em;
     margin-bottom: .8em !important;
+}
+
+#api {
+    text-align: center;
 }
 
 
@@ -404,14 +380,252 @@ code span.dt {
     color: var(--color-d);
 }
 
-/* Icons */
+/* Buttons */
 
-
-.fa, .far, .fas, .icon {
-    color: var(--color-a);
+.book .btn-group-lg>.btn, .btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.7rem !important;
+    line-height: 1.5;
+    border-radius: .3rem;
 }
 
-.icon {
-  height: 40px;
-  width: 40px;
+.book .book-body .page-wrapper .page-inner section.normal .btn-primary a {
+    color: #fff;
+}
+
+
+.book .book-body .page-wrapper .page-inner section.normal .btn-primary:hover {
+    color: #fff;
+    text-decoration: unset;
+    background-color: #0069d9;
+    border-color: #0069d9;
+}
+
+.book .book-body .page-wrapper .page-inner .btn-group .btn.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:active, .book .book-body .page-wrapper .page-inner section.normal .btn a:focus, .book .book-body .page-wrapper .page-inner section.normal .btn a:hover {
+    outline: 0;
+    text-decoration: none;
+}
+
+.book .book-body .page-wrapper .page-inner .btn-group .btn,
+.book .book-body .page-wrapper .page-inner .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.book .book-body .page-wrapper .page-inner .btn-group .btn-block,
+.book .book-body .page-wrapper .page-inner .btn-block {
+  margin: 2px;
+}
+
+/* Code Chunk */
+
+.code-chunk {
+  background-color: var(--code-grey) !important;
+  padding: 15px;
+  border-radius: .25rem;
+}
+
+/* MathJax */
+
+.mjx-block {
+  text-align: left !important;
+}
+
+.copy-button {
+  float: right;
+}
+
+.code-lang {
+  float:right;
+}
+
+.no-gutters.code-lang-col {
+  padding: 1px;
+}
+
+.no-gutters.copy-col {
+  padding: 1px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .dropdown-item a {
+    font-weight: 400;
+    color: #212529;
+    text-decoration: none;
+    background: 0 0;
+
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal code {
+    padding: .2em;
+    margin: 0;
+    font-size: .85em;
+    background-color: var(--code-grey);
+}
+
+.syntax-variable {
+  color: var(--color-c);
+}
+
+.book .book-body .page-wrapper .page-inner section.normal code:after, .book .book-body .page-wrapper .page-inner section.normal .code-chunk code:before {
+    letter-spacing: 0em;
+    content: "" !important;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a {
+    color: #007bff;
+    text-decoration: none;
+    background: 0 0;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:active, .book .book-body .page-wrapper .page-inner section.normal a:focus, .book .book-body .page-wrapper .page-inner section.normal .code-chunk a:hover {
+    outline: 0;
+    text-decoration: none;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .code {
+  display: none;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .code.active {
+  display: unset;
+}
+
+/* Long Quotes */
+
+.book .book-body .page-wrapper .page-inner section.normal pre {
+    word-wrap: normal;
+    margin: 0 0 1.275em;
+    padding: .85em 1em;
+    background: #f7f7f7;
+    overflow: unset !important;
+    max-height: 400px;
+}
+
+/* Tables */
+
+.book .book-body .page-wrapper .page-inner section.normal table,
+.book .book-body .page-wrapper .page-inner section.normal table td {
+  border-color: var(--border-grey);
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table td.td-collapse {
+  padding: 0px;
+}
+
+.main-content table {
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1rem 0;
+}
+.main-content table th {
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+}
+.main-content table th, .main-content table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e9ebec;
+  text-align: left;
+}
+.main-content table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-1 {
+  width: 8.33%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-2 {
+  width: 16.66%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-3 {
+  width: 25%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-4 {
+  width: 33.33%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-5 {
+  width: 41.66%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-6 {
+  width: 50%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-7 {
+  width: 58.33%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-8 {
+  width: 66.66%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-9 {
+  width: 75%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-10 {
+  width: 83.33%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-11 {
+  width: 91.66%
+}
+
+
+/* MathJax */
+
+.mjx-chtml {
+  color: var(--math-grey);
+}
+
+/* Highlight JS */
+
+.book .book-body .page-wrapper .page-inner section.normal code-chunk pre .hljs,
+.book .book-body .page-wrapper .page-inner section.normal code-chunk code .hljs {
+    display: block;
+    background: var(--code-grey);
+    color: #4d4d4c;
+    padding: 0em;
+}
+
+code-chunk pre {
+    padding: 0px !important;
+    overflow: auto;
+    text-shadow: none;
+    background: var(--code-grey) !important;
+    border: solid 1px #f2f2f2;
+    font-size: 1em;
+    max-height: unset !important;
+    max-width: none !important;
 }
