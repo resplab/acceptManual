@@ -1,5 +1,5 @@
 
-# Using the Package as an API (PRISM)
+# Using the Package as an API (PRISM) {#api}
 
 PRISM (Programmable Interface for Simulation/Statistical Models) is a package which provides a user-friendly API interface in R for clinical prediction and decision analytics models hosted on UBC PRISM cloud.
 
