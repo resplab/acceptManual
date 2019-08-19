@@ -21,13 +21,13 @@ In the row that has the **ACCEPT** model, go to the column labelled **Excel Inte
 
 ### Setting the Inputs {-}
 
-Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are 7 sheets, labelled **Intro**, **Settings**, **Input - Main Parameters**, **Input - Agent Characteristics**, **Output - Main Outcomes **, **Output - Exacerbations**, and **Output - Severity**. 
+Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are two sheets, labelled **Model** and **Settings**. Click on the **Model** tab. 
 
-You can click on the **Intro** tab for more information on how to use the Excel API.
+You will notice several tables. The top two tables are input tables, which means that these are values you can change. For each package, we will provide details on what values are allowed. For example, **Gender** can be either **Male** or **Female**. 
 
-The **Settings** tab you don't need to use.
+#### Plot Options {-}
 
-There are 2 input tabs. Click on **Input - Main Parameters**. The first table contains global parameters. You may change these if you like, or leave the default values: 
+The first table is Plot Options. You may change these if you like, or leave the default values: 
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
@@ -35,7 +35,15 @@ rawHTML <- paste(readLines("excel-input1.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
-The second table contains the parameters for the Payoff Module. 
+#### Patient Characteristics {-}
+
+The second table applies to the patient. You can use the default patient inputs, or change them:
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("excel-input2.html"), collapse="\n")
+HTML(rawHTML)
+```
 
 ### Running the Model {-}
 
@@ -48,7 +56,7 @@ To run the model, you need to connect to the model first.
 
 ### Results {-}
 
-Once you have run the model, there are 3 sheets with charts to look at the results: **Output - Main Outcomes**, **Output - Exacerbations**, and **Output - Severity**. 
+Once you have run the model, there are several graphs which will be plotted in the same sheet to visualize the results.
 
 ## API in R/Javascript/Python/Bash
 
