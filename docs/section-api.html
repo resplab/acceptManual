@@ -480,120 +480,124 @@ modelInput = [{}]<br>
     <div class="code-chunk">
 
     <code class="code mac">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],<br>
-"model_input":[{<br>
-  "patient_data": [{<br>
-			"ID": "10001",<br>
-			"male": 1,<br>
-			"age": 70,<br>
-			"smoker": 1,<br>
-			"oxygen": 1,<br>
-			"statin": 1,<br>
-			"LAMA": 1,<br>
-			"LABA": 1,<br>
-			"ICS": 1,<br>
-			"FEV1": 33,<br>
-			"BMI": 25,<br>
-			"SGRQ": 50,<br>
-			"LastYrExacCount": 2,<br>
-			"LastYrSevExacCount": 1,<br>
-			"randomized_azithromycin": 0,<br>
-			"randomized_statin": 0,<br>
-			"randomized_LAMA": 0,<br>
-			"randomized_LABA": 0,<br>
-			"randomized_ICS": 0<br>
-		}],<br>
-		"random_sampling_N": 1000,<br>
-		"calculate_CIs": True,<br>
-		"random_distribution_iteration": 20000}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json </code>
+      curl -X POST -H "Content-Type: application/json" -d '{<br>
+        "api_key":["YOUR_API_KEY"],<br>
+        "func":["prism_model_run"],<br>
+        "model_input": {<br>
+          "patient_data": {<br>
+			       "ID": "10001",<br>
+			       "male": 1,<br>
+			       "age": 70,<br>
+			       "smoker": 1,<br>
+			       "oxygen": 1,<br>
+			       "statin": 1,<br>
+			       "LAMA": 1,<br>
+			       "LABA": 1,<br>
+			       "ICS": 1,<br>
+			       "FEV1": 33,<br>
+			       "BMI": 25,<br>
+			       "SGRQ": 50,<br>
+			       "LastYrExacCount": 2,<br>
+			       "LastYrSevExacCount": 1,<br>
+			       "randomized_azithromycin": 0,<br>
+			       "randomized_statin": 0,<br>
+			       "randomized_LAMA": 0,<br>
+			       "randomized_LABA": 0,<br>
+			       "randomized_ICS": 0<br>
+		      },<br>
+		     "random_sampling_N": 1000,<br>
+		     "calculate_CIs": true,<br>
+		     "random_distribution_iteration": 20000}}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json<br>
+       </code>
       <code class="code linux">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],<br>
-"model_input":[{		"patient_data": [{<br>
-			"ID": "10001",<br>
-			"male": 1,<br>
-			"age": 70,<br>
-			"smoker": 1,<br>
-			"oxygen": 1,<br>
-			"statin": 1,<br>
-			"LAMA": 1,<br>
-			"LABA": 1,<br>
-			"ICS": 1,<br>
-			"FEV1": 33,<br>
-			"BMI": 25,<br>
-			"SGRQ": 50,<br>
-			"LastYrExacCount": 2,<br>
-			"LastYrSevExacCount": 1,<br>
-			"randomized_azithromycin": 0,<br>
-			"randomized_statin": 0,<br>
-			"randomized_LAMA": 0,<br>
-			"randomized_LABA": 0,<br>
-			"randomized_ICS": 0<br>
-		}],<br>
-		"random_sampling_N": 1000,<br>
-		"calculate_CIs": True,<br>
-		"random_distribution_iteration": 20000}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json<br>
-<br>
-}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json<br>
+      curl -X POST -H "Content-Type: application/json" -d '{<br>
+        "api_key":["YOUR_API_KEY"],<br>
+        "func":["prism_model_run"],<br>
+        "model_input": {<br>
+          "patient_data": {<br>
+			       "ID": "10001",<br>
+			       "male": 1,<br>
+			       "age": 70,<br>
+			       "smoker": 1,<br>
+			       "oxygen": 1,<br>
+			       "statin": 1,<br>
+			       "LAMA": 1,<br>
+			       "LABA": 1,<br>
+			       "ICS": 1,<br>
+			       "FEV1": 33,<br>
+			       "BMI": 25,<br>
+			       "SGRQ": 50,<br>
+			       "LastYrExacCount": 2,<br>
+			       "LastYrSevExacCount": 1,<br>
+			       "randomized_azithromycin": 0,<br>
+			       "randomized_statin": 0,<br>
+			       "randomized_LAMA": 0,<br>
+			       "randomized_LABA": 0,<br>
+			       "randomized_ICS": 0<br>
+		      },<br>
+		     "random_sampling_N": 1000,<br>
+		     "calculate_CIs": true,<br>
+		     "random_distribution_iteration": 20000}}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json<br>
       </code>
         <code class="code windows">
-          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{<br>
-            "patient_data": [{<br>
-              "ID": "10001",<br>
-              "male": 1,<br>
-              "age": 70,<br>
-              "smoker": 1,<br>
-              "oxygen": 1,<br>
-              "statin": 1,<br>
-              "LAMA": 1,<br>
-              "LABA": 1,<br>
-              "ICS": 1,<br>
-              "FEV1": 33,<br>
-              "BMI": 25,<br>
-              "SGRQ": 50,<br>
-              "LastYrExacCount": 2,<br>
-              "LastYrSevExacCount": 1,<br>
-              "randomized_azithromycin": 0,<br>
-              "randomized_statin": 0,<br>
-              "randomized_LAMA": 0,<br>
-              "randomized_LABA": 0,<br>
-              "randomized_ICS": 0<br>
-            }],<br>
-            "random_sampling_N": 1000,<br>
-            "calculate_CIs": True,<br>
-            "random_distribution_iteration": 20000<br>
-          }]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"}<br>
+          curl -Body '{<br>
+            "api_key":["YOUR_API_KEY"],<br>
+            "func":["prism_model_run"],<br>
+            "model_input": {<br>
+              "patient_data": {<br>
+    			       "ID": "10001",<br>
+    			       "male": 1,<br>
+    			       "age": 70,<br>
+    			       "smoker": 1,<br>
+    			       "oxygen": 1,<br>
+    			       "statin": 1,<br>
+    			       "LAMA": 1,<br>
+    			       "LABA": 1,<br>
+    			       "ICS": 1,<br>
+    			       "FEV1": 33,<br>
+    			       "BMI": 25,<br>
+    			       "SGRQ": 50,<br>
+    			       "LastYrExacCount": 2,<br>
+    			       "LastYrSevExacCount": 1,<br>
+    			       "randomized_azithromycin": 0,<br>
+    			       "randomized_statin": 0,<br>
+    			       "randomized_LAMA": 0,<br>
+    			       "randomized_LABA": 0,<br>
+    			       "randomized_ICS": 0<br>
+    		      },<br>
+    		     "random_sampling_N": 1000,<br>
+    		     "calculate_CIs": true,<br>
+    		     "random_distribution_iteration": 20000}}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"}<br>
         </code>
     <code class="code js">
       let postData = JSON.stringify({<br>
-	"api_key": "YOUR_API_KEY",<br>
-	"func": ["prism_model_run"],<br>
-	"model_input": [{<br>
-		"patient_data": [{<br>
-			"ID": "10001",<br>
-			"male": 1,<br>
-			"age": 70,<br>
-			"smoker": 1,<br>
-			"oxygen": 1,<br>
-			"statin": 1,<br>
-			"LAMA": 1,<br>
-			"LABA": 1,<br>
-			"ICS": 1,<br>
-			"FEV1": 33,<br>
-			"BMI": 25,<br>
-			"SGRQ": 50,<br>
-			"LastYrExacCount": 2,<br>
-			"LastYrSevExacCount": 1,<br>
-			"randomized_azithromycin": 0,<br>
-			"randomized_statin": 0,<br>
-			"randomized_LAMA": 0,<br>
-			"randomized_LABA": 0,<br>
-			"randomized_ICS": 0<br>
-		}],<br>
-		"random_sampling_N": 1000,<br>
-		"calculate_CIs": True,<br>
-		"random_distribution_iteration": 20000<br>
-	}]<br>
-});<br>
+        "api_key":["YOUR_API_KEY"],<br>
+        "func":["prism_model_run"],<br>
+        "model_input": {<br>
+          "patient_data": {<br>
+             "ID": "10001",<br>
+             "male": 1,<br>
+             "age": 70,<br>
+             "smoker": 1,<br>
+             "oxygen": 1,<br>
+             "statin": 1,<br>
+             "LAMA": 1,<br>
+             "LABA": 1,<br>
+             "ICS": 1,<br>
+             "FEV1": 33,<br>
+             "BMI": 25,<br>
+             "SGRQ": 50,<br>
+             "LastYrExacCount": 2,<br>
+             "LastYrSevExacCount": 1,<br>
+             "randomized_azithromycin": 0,<br>
+             "randomized_statin": 0,<br>
+             "randomized_LAMA": 0,<br>
+             "randomized_LABA": 0,<br>
+             "randomized_ICS": 0<br>
+          },<br>
+         "random_sampling_N": 1000,<br>
+         "calculate_CIs": true,<br>
+         "random_distribution_iteration": 20000}});<br>
 request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json');<br>
 request.setRequestHeader('Content-Type', 'application/json');<br>
 request.send(postData);<br>
@@ -610,8 +614,8 @@ let results = request.response;<br>
     </code>
     <code class="code python">
       api_key = 'YOUR_API_KEY'<br>
-modelInput = [{<br>
-  "patient_data": [{<br>
+modelInput = {<br>
+  "patient_data": {<br>
     "ID": "10001",<br>
     "male": 1,<br>
     "age": 70,<br>
@@ -631,11 +635,11 @@ modelInput = [{<br>
     "randomized_LAMA": 0,<br>
     "randomized_LABA": 0,<br>
     "randomized_ICS": 0<br>
-  }],<br>
+  },<br>
   "random_sampling_N": 1000,<br>
   "calculate_CIs": True,<br>
   "random_distribution_iteration": 20000<br>
-}]<br>
+}<br>
       response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",<br>
       json = {"api_key":[api_key],<br>
         "func": ["prism_model_run"],<br>
