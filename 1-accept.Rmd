@@ -9,7 +9,7 @@ output:
     delete_merged_file: TRUE
     table_css: FALSE
     output_dir: "docs"
-    css: ["pretty-styles.css", "cayman.css", "python.css", "shadow.css", "highlightjs/styles/default.css", "index.html"]
+    css: ["css/pretty-styles.css", "css/cayman.css", "css/python.css", "css/shadow.css", "highlightjs/styles/default.css", "index.html"]
     js: ["js/list-group.js", "js/code-chunk.js", "js/code-chunk-component.js", "js/highlight.js"]
     config:
       toc:
@@ -54,5 +54,3 @@ themeColors = c("#330033", "#8cf2f2", "#c51672", "#007bff")
 The purpose of this package is to predict future COPD exacerbation rates and severity based on past exacerbation rates.
 
 It might be helpful to take a look at the ACCEPT web application before reading further, as this gives a visualization of the package: [ACCEPT Web Application](#webapp).
-
-
