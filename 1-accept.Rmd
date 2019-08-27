@@ -9,7 +9,7 @@ output:
     delete_merged_file: TRUE
     table_css: FALSE
     output_dir: "docs"
-    css: ["pretty-styles.css", "cayman.css", "python.css", "shadow.css", "index.html"]
+    css: ["pretty-styles.css", "cayman.css", "python.css", "shadow.css", "highlightjs/styles/default.css", "index.html"]
     js: ["js/list-group.js", "js/code-chunk.js", "js/code-chunk-component.js", "js/highlight.js"]
     config:
       toc:

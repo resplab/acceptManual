@@ -629,3 +629,9 @@ code-chunk pre {
     max-height: unset !important;
     max-width: none !important;
 }
+
+/* BookDown R Code Chunks (Built In) */
+
+.book .book-body .page-wrapper .page-inner section.normal pre.sourceCode {
+  overflow: auto !important;
+}
