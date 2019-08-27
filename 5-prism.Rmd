@@ -7,49 +7,46 @@ For more information, the PRISM package can be found on GitHub at [PRISM on  Git
 
 ## PRISM API in Excel {#api-in-excel}
 
-One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly. 
+One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly.
 
 To use the model, you will need to have Excel installed on your computer. Currently, the Excel API only works in Windows (PC), although we are working on developing a version for Mac (OS X) as well.
 
 ### Downloading the Spreadsheet {-}
 
-To get started, you will need to go to: 
+To get started, you will need to go to:
 
-[PRISM Model Repository](http://resp.core.ubc.ca/ipress/prism). 
+[PRISM Model Repository](http://resp.core.ubc.ca/ipress/prism).
 
-In the row that has the **ACCEPT** model, go to the column labelled **Excel Interface** and click on the link **ACCEPT Excel (PC)**. This will download the Excel Interface for the **ACCEPT** model. 
+In the row that has the **ACCEPT** model, go to the column labelled **Excel Interface** and click on the link **ACCEPT Excel (PC)**. This will download the Excel Interface for the **ACCEPT** model.
 
 ### Setting the Inputs {-}
 
-Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are two sheets, labelled **Model** and **Settings**. Click on the **Model** tab. 
+Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are two sheets, labelled **Model** and **Settings**. Click on the **Model** tab.
 
-You will notice several tables. The top two tables are input tables, which means that these are values you can change. For each package, we will provide details on what values are allowed. For example, **Gender** can be either **Male** or **Female**. 
+You will notice several tables. The top two tables are input tables, which means that these are values you can change. For each package, we will provide details on what values are allowed. For example, **Gender** can be either **Male** or **Female**.
 
 #### Plot Options {-}
 
-The first table is Plot Options. You may change these if you like, or leave the default values: 
+The first table is Plot Options. You may change these if you like, or leave the default values:
 
-```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("excel-input1.html"), collapse="\n")
-HTML(rawHTML)
+```{r, excel-input1, eval=TRUE, echo=FALSE}
+source("R/addHTML.R")
+addHTML("excel-input1.html", section = 5, codeChunk = FALSE)
 ```
 
 #### Patient Characteristics {-}
 
 The second table applies to the patient. You can use the default patient inputs, or change them:
 
-```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("excel-input2.html"), collapse="\n")
-HTML(rawHTML)
+```{r, excel-input2, eval=TRUE, echo=FALSE}
+addHTML("excel-input2.html", section = 5, codeChunk = FALSE)
 ```
 
 ### Running the Model {-}
 
-To run the model, you need to connect to the model first. 
+To run the model, you need to connect to the model first.
 
-1. Click on the **Output - Main Outcomes** sheet. 
+1. Click on the **Output - Main Outcomes** sheet.
 2. There is a button at the top of the page which says **Connect to Model**. Click on that button. On the bottom left of the Excel window, you should see the text "Connecting to model..."
 3. Click on the **Run** button.
 4. Click on the **Disconnect from Model** button once it has finished running.
@@ -62,18 +59,13 @@ Once you have run the model, there are several graphs which will be plotted in t
 
 To get started, you will need to install a few packages:
 
-```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-source("FormatCode.R")
-htmlLines = readLines("install.html")
-newLines = addBreaks(htmlLines)
-rawHTML <- paste(newLines, collapse="\n")
-HTML(rawHTML)
+```{r, install, eval=TRUE, echo=FALSE}
+addHTML("install.html", section = 5, codeChunk = TRUE)
 ```
 
 The next step is to get an API key. For now, we will be giving out API keys on a case-by-case basis, so please email either:
 
-Amin Adibi: amin.adibi@ubc.ca 
+Amin Adibi: amin.adibi@ubc.ca
 
 Mohsen Sadatsafavi: mohsen.sadatsafavi@ubc.ca
 
@@ -81,13 +73,8 @@ Mohsen Sadatsafavi: mohsen.sadatsafavi@ubc.ca
 
 To run the model, you can either use the default input, or set your own input. To see what the default input is, you can use the following `POST` call:
 
-```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-source("FormatCode.R")
-htmlLines = readLines("get-default-input.html")
-newLines = addBreaks(htmlLines)
-rawHTML <- paste(newLines, collapse="\n")
-HTML(rawHTML)
+```{r, get-default-input, eval=TRUE, echo=FALSE}
+addHTML("get-default-input.html", section = 5, codeChunk = TRUE)
 ```
 
 
@@ -95,21 +82,12 @@ HTML(rawHTML)
 
 To run the model with the default input, you can use the following `POST` call:
 
-```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-source("FormatCode.R")
-htmlLines = readLines("post-prism-default.html")
-newLines = addBreaks(htmlLines)
-rawHTML <- paste(newLines, collapse="\n")
-HTML(rawHTML)
+```{r, post-prism-default, eval=TRUE, echo=FALSE}
+addHTML("post-prism-default.html", section = 5, codeChunk = TRUE)
 ```
 
 To set your own input:
 
-```{r, eval=TRUE, echo=FALSE}
-htmlLines = readLines("post-prism.html")
-newLines = addBreaks(htmlLines)
-rawHTML <- paste(newLines, collapse="\n")
-HTML(rawHTML)
+```{r, post-prism, eval=TRUE, echo=FALSE}
+addHTML("post-prism.html", section = 5, codeChunk = TRUE)
 ```
-

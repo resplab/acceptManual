@@ -24,9 +24,8 @@ print(samplePatients[,14:19])
 ```
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("predictACCEPT-inputs.html"), collapse="\n")
-HTML(rawHTML)
+source("R/addHTML.R")
+addHTML("predictACCEPT-inputs.html", section = 3, codeChunk = FALSE)
 ```
 
 ### Exacerbation Rate {-}
@@ -38,12 +37,10 @@ results <- predictACCEPT(samplePatients[1,])
 print(t(results))
 ```
 
-The **predictACCEPT()** function returns a data frame with the original patient data, along with the predictions for different treatment options. Here is a summary of the results: 
+The **predictACCEPT()** function returns a data frame with the original patient data, along with the predictions for different treatment options. Here is a summary of the results:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("predictACCEPT-outputs.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("predictACCEPT-outputs.html", section = 3, codeChunk = FALSE)
 ```
 
 To visualize the data, there is a graphing function called **plotExacerbations()**, which creates a Plotly bar graph. You have the option of selecting **probability** or **rate** for which prediction you want to see, and either **CI** or **PI** to select the confidence interval or prediction interval respectively.

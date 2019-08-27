@@ -49,17 +49,14 @@ Chronic Obstructive Pulmonary Disease (COPD) affects 300 million people worldwid
 ### Exacerbation Causes {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("exacerbation-cause.html"), collapse="\n")
-HTML(rawHTML)
+source("R/addHTML.R")
+addHTML("exacerbation-cause.html", section = 2, codeChunk = FALSE)
 ```
 
 ### Exacerbation Severity {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("exacerbation-severity.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("exacerbation-severity.html", section = 2, codeChunk = FALSE)
 ```
 
 ### References {-}
@@ -70,7 +67,7 @@ HTML(rawHTML)
 
 ## The Study Population {#studyPopulation}
 
-The data for this study was taken from three different studies: 
+The data for this study was taken from three different studies:
 
 [MACRO Clinical Trial](https://clinicaltrials.gov/ct2/show/NCT00325897)
 
@@ -109,7 +106,7 @@ nodes <- create_node_df(n=3, type = "character",
                         fillcolor = themeColors[1],
                         shape = "oval",
                         fontsize = 4,
-                        label = c("All \n Participants","Placebo", 
+                        label = c("All \n Participants","Placebo",
                                   "Azithromycin \n Treatment"))
 
 edges <- create_edge_df(from = c(1, 1),
@@ -117,24 +114,20 @@ edges <- create_edge_df(from = c(1, 1),
                        rel = "leading to",
                        color = themeColors[2])
 
-graph <- create_graph(nodes_df = nodes, 
-                      edges_df = edges) 
+graph <- create_graph(nodes_df = nodes,
+                      edges_df = edges)
 render_graph(graph, layout="tree")
 ```
 
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("study1-arms.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("study1-arms.html", section = 2, codeChunk = FALSE)
 ```
 
 #### Data Collection: Primary Metric {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("study1-primary-metric.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("study1-primary-metric.html", section = 2, codeChunk = FALSE)
 ```
 
 ### Clinical Trial 2: STATCOPE {-}
@@ -162,7 +155,7 @@ nodes <- create_node_df(n=3, type = "character",
                         fillcolor = themeColors[1],
                         shape = "oval",
                         fontsize = 4,
-                        label = c("All \n Participants","Placebo", 
+                        label = c("All \n Participants","Placebo",
                                   "Simvastatin \n Treatment"))
 
 edges <- create_edge_df(from = c(1, 1),
@@ -170,24 +163,20 @@ edges <- create_edge_df(from = c(1, 1),
                        rel = "leading to",
                        color = themeColors[2])
 
-graph <- create_graph(nodes_df = nodes, 
-                      edges_df = edges) 
+graph <- create_graph(nodes_df = nodes,
+                      edges_df = edges)
 render_graph(graph, layout="tree")
 ```
 
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("study2-arms.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("study2-arms.html", section = 2, codeChunk = FALSE)
 ```
 
 #### Data Collection: Primary Metric {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("study2-primary-metric.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("study2-primary-metric.html", section = 2, codeChunk = FALSE)
 ```
 
 ### Clinical Trial 3: OPTIMAL {-}
@@ -216,7 +205,7 @@ nodes <- create_node_df(n=4, type = "character",
                         fillcolor = themeColors[1],
                         shape = "oval",
                         fontsize = 4,
-                        label = c("All \n Participants","Placebo \n Inhaler", 
+                        label = c("All \n Participants","Placebo \n Inhaler",
                                   "Salmeteral \n Inhaler",
                                   "Advair \n Inhaler"))
 
@@ -225,49 +214,41 @@ edges <- create_edge_df(from = c(1, 1, 1),
                        rel = "leading to",
                        color = themeColors[2])
 
-graph <- create_graph(nodes_df = nodes, 
-                      edges_df = edges) 
+graph <- create_graph(nodes_df = nodes,
+                      edges_df = edges)
 render_graph(graph, layout="tree")
 ```
 
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("study3-arms.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("study3-arms.html", section = 2, codeChunk = FALSE)
 ```
 
 #### Data Collection: Primary Metric {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("study3-primary-metric.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("study3-primary-metric.html", section = 2, codeChunk = FALSE)
 ```
 
 ## Data Collection: Combined Trials {#combined-trials}
 
-For our study, we combined the results from the three trials described above. 
+For our study, we combined the results from the three trials described above.
 
 ### Primary Metric {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("primary-metric.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("primary-metric.html", section = 2, codeChunk = FALSE)
 ```
 
 ### Secondary Metrics {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("secondary-metrics.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("secondary-metrics.html", section = 2, codeChunk = FALSE)
 ```
 
 ## Validation {#validation}
 
-We generated our regression model based on the OPTIMAL, STATCOPE, and MACRO studies. To test how well this model performed with new data, we used a fourth study, ECLIPSE. 
+We generated our regression model based on the OPTIMAL, STATCOPE, and MACRO studies. To test how well this model performed with new data, we used a fourth study, ECLIPSE.
 
 Details of the study can be found here: [Evaluation of COPD Longitudinally to Identify Predictive Surrogate Endpoints](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2944278/).
 
@@ -278,8 +259,3 @@ Details of the study can be found here: [Evaluation of COPD Longitudinally to Id
 - Does not have asthma
 - 10 pack years or more of smoking
 - at least 1 COPD exacerbation in the last year
-
-
-
-
-
