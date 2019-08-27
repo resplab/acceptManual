@@ -24,7 +24,7 @@
     </code>
     <code class="code r active">
       library(prism)
-      <span class="hljs-function">connect_to_model</span>('acceptPrism', api_key = YOUR_API_KEY)
+      connect_to_model('acceptPrism', api_key = YOUR_API_KEY)
       input = get_default_input()
     </code>
     <code class="code python">
@@ -35,7 +35,7 @@
         json = {"api_key":[api_key],
         "func": ["get_default_input"]})
       print(response)
-      results = json.loads(response.text) 
+      results = json.loads(response.text)
       print(results)
     </code>
 </div></div></code-chunk>

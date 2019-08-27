@@ -409,7 +409,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </code>
     <code class="code r active">
       library(prism)<br>
-      <span class="hljs-function">connect_to_model</span>('acceptPrism', api_key = YOUR_API_KEY)<br>
+      connect_to_model('acceptPrism', api_key = YOUR_API_KEY)<br>
       input = get_default_input()<br>
     </code>
     <code class="code python">
@@ -420,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         json = {"api_key":[api_key],<br>
         "func": ["get_default_input"]})<br>
       print(response)<br>
-      results = json.loads(response.text) <br>
+      results = json.loads(response.text)<br>
       print(results)<br>
     </code>
 </div></div></code-chunk>
@@ -456,7 +456,8 @@ request.setRequestHeader('Content-Type', 'application/json');<br>
 request.send(postData);<br>
 let results = request.response;<br>
     </code>
-    <code class="code r active">library(prism)
+    <code class="code r active">
+      library(prism)<br>
       connect_to_model('acceptPrism', api_key = YOUR_API_KEY)<br>
       results = model_run()<br>
     </code>
@@ -603,7 +604,8 @@ request.setRequestHeader('Content-Type', 'application/json');<br>
 request.send(postData);<br>
 let results = request.response;<br>
     </code>
-    <code class="code r active">library(prism)
+    <code class="code r active">
+      library(prism)<br>
       connect_to_model('acceptPrism', api_key = YOUR_API_KEY)<br>
       model_input = list(patient_data = samplePatients)<br>
       model_input$random_sampling_N = 1000<br>

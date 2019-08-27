@@ -126,7 +126,8 @@ request.setRequestHeader('Content-Type', 'application/json');
 request.send(postData);
 let results = request.response;
     </code>
-    <code class="code r active">library(prism)
+    <code class="code r active">
+      library(prism)
       connect_to_model('acceptPrism', api_key = YOUR_API_KEY)
       model_input = list(patient_data = samplePatients)
       model_input$random_sampling_N = 1000
